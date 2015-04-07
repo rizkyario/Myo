@@ -9,10 +9,6 @@
     <RootNamespace>Myo</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>Myo</AssemblyName>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
-    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,35 +35,39 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Xamarin.ObjcBinding.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
-  <ItemGroup>
-    <ObjcBindingNativeLibrary Include="libMyoKit.a" />
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="libMyoKit.linkwith.cs">
       <DependentUpon>libMyoKit.a</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="libMyoKit.a" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="MyoKit.h" />
     <None Include="TLMAccelerometerEvent.h" />
     <None Include="TLMAngle.h" />
+    <None Include="TLMArmSyncEvent.h" />
+    <None Include="TLMArmUnsyncEvent.h" />
     <None Include="TLMEulerAngles.h" />
     <None Include="TLMGyroscopeEvent.h" />
     <None Include="TLMHub.h" />
+    <None Include="TLMLockEvent.h" />
+    <None Include="TLMMath.h" />
     <None Include="TLMMyo.h" />
     <None Include="TLMOrientationEvent.h" />
     <None Include="TLMPose.h" />
     <None Include="TLMSettingsViewController.h" />
-    <None Include="TLMArmSyncEvent.h" />
-    <None Include="TLMArmUnsyncEvent.h" />
-    <None Include="TLMLockEvent.h" />
     <None Include="TLMUnlockEvent.h" />
   </ItemGroup>
 </Project>
