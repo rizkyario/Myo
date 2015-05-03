@@ -36,12 +36,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="libMyoKit.linkwith.cs">
       <DependentUpon>libMyoKit.a</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
@@ -69,5 +70,6 @@
     <None Include="TLMPose.h" />
     <None Include="TLMSettingsViewController.h" />
     <None Include="TLMUnlockEvent.h" />
+    <None Include="TLMEmgEvent.h" />
   </ItemGroup>
 </Project>

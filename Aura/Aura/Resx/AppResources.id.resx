@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+
+	<data name="HomePageLabel" xml:space="preserve">
+	    <value>Halaman Utama</value>
+	    <comment>label for Home Page label</comment>
+	</data>
+
+	<data name="ProfilePageLabel" xml:space="preserve">
+	    <value>Profil</value>
+	    <comment>label for Profile</comment>
+	</data>
+	    
+	<data name="DictionaryLabel" xml:space="preserve">
+	    <value>Kamus</value>
+	    <comment>label for Dictionary Menu</comment>
+	</data>
+
+	<data name="GameLabel" xml:space="preserve">
+	    <value>Quiz</value>
+	    <comment>label for Game Menu</comment>
+	</data>
+
+	<data name="PopularLabel" xml:space="preserve">
+	    <value>Populer</value>
+	    <comment>label for Popular Menu</comment>
+	</data>
+
+	<data name="SOTDLabel" xml:space="preserve">
+	    <value>Isyarat Hari Ini</value>
+	    <comment>label for Sign of The Day Menu</comment>
+	</data>
+
+	<data name="AskSignLabel" xml:space="preserve">
+	    <value>Tanya Isyarat</value>
+	    <comment>label for Ask Sign Menu</comment>
+	</data>
+
+	<data name="EditBtnLabel" xml:space="preserve">
+	    <value>Ubah</value>
+	    <comment>label for Edit Activity</comment>
+	</data>
+
+	<data name="DeleteBtnLabel" xml:space="preserve">
+	    <value>Hapus</value>
+	    <comment>label for Delete Activity</comment>
+	</data>
+
+	<data name="ReportBtnLabel" xml:space="preserve">
+	    <value>Laporkan ketidakpantasan</value>
+	    <comment>label for Report Innapropriate Activity</comment>
+	</data>
+
+	<data name="LikeLabel" xml:space="preserve">
+	    <value>Menyukai</value>
+	    <comment>label for Like Activity</comment>
+	</data>
+
+	<data name="LikedLabel" xml:space="preserve">
+	    <value>Suka</value>
+	    <comment>label for Liked Activity</comment>
+	</data>
+
+	<data name="CommentLabel" xml:space="preserve">
+	    <value>Komentar</value>
+	    <comment>label for Comment Activity</comment>
+	</data>
+
+
+
+	<data name="LogOutLabel" xml:space="preserve">
+	    <value>Keluar</value>
+	    <comment>label for Log Out</comment>
+	</data>
+
+	<data name="SettingMsgLabel" xml:space="preserve">
+	    <value>Apa yang ingin anda lakukan?</value>
+	    <comment>label for Setting message</comment>
+	</data>
+
+	<data name="LogOutConfLabel" xml:space="preserve">
+	    <value>Apakah anda benar-benar ingin keluar</value>
+	    <comment>label for Log Out Confirmation</comment>
+	</data>
+
+	<data name="PostPageLabel" xml:space="preserve">
+	    <value>Unggah Video</value>
+	    <comment>label for Post label</comment>
+	</data>
+
+	<data name="EditPageLabel" xml:space="preserve">
+	    <value>Ubah Video</value>
+	    <comment>label for Edit label</comment>
+	</data>
+
+	<data name="PostBtnLabel" xml:space="preserve">
+	    <value>Unggah</value>
+	    <comment>label for Post btn label</comment>
+	</data>
+
+	<data name="SaveBtnLabel" xml:space="preserve">
+	    <value>Simpan</value>
+	    <comment>label for Edit btn label</comment>
+	</data>
+
+	<data name="DeleteVideoLabel" xml:space="preserve">
+	    <value>Hapus Video?</value>
+	    <comment>label for deleting video</comment>
+	</data>
+
+	<data name="DeleteVideoMsgLabel" xml:space="preserve">
+	    <value>Apakah anda ingin menghapus video ini?</value>
+	    <comment>label for deleting video message</comment>
+	</data>
+
+	<data name="ReportVideoLabel" xml:space="preserve">
+	    <value>Laporkan Video?</value>
+	    <comment>label for reporting video</comment>
+	</data>
+
+	<data name="ReportVideoMsgLabel" xml:space="preserve">
+	    <value>DApakah anda ingin melaporkan video ini?</value>
+	    <comment>label for reporting video message</comment>
+	</data>
+
+	<data name="GameLabel" xml:space="preserve">
+	    <value>Menu Game</value>
+	    <comment>label for Game video label</comment>
+	</data>
+
+	<data name="GameMsgLabel" xml:space="preserve">
+	    <value>Menu Game akan segera hadir</value>
+	    <comment>label for Game video message</comment>
+	</data>
+
+
+	<data name="YesBtnLabel" xml:space="preserve">
+	    <value>Ya</value>
+	    <comment>label for Yes Button</comment>
+	</data>
+
+	<data name="NoBtnLabel" xml:space="preserve">
+	    <value>Tidak</value>
+	    <comment>label for No Button</comment>
+	</data>
+
+	<data name="CancelBtnLabel" xml:space="preserve">
+	    <value>Batal</value>
+	    <comment>label for Cancel Button</comment>
+	</data>
+	    
+
+	 <data name="OkBtnLabel" xml:space="preserve">
+	    <value>Ok</value>
+	    <comment>label for Ok Button</comment>
+	</data>
+
+	<data name="VideoSizeTitle" xml:space="preserve">
+	    <value>Ukuran Video</value>
+	    <comment>label for Video Size Alert</comment>
+	</data>
+
+	<data name="VideoSizeMessage" xml:space="preserve">
+	    <value>Video ini terlalu besar, Pilihlah video dengan durasi kurang dari 20 detik</value>
+	    <comment>label Message for Video Size Alert</comment>
+	</data>
+
+	<data name="VideoSizeSelectAgainMessage" xml:space="preserve">
+	    <value>Pilih Lagi</value>
+	    <comment>label Message for Video Size Select Again</comment>
+	</data>
+
+	<data name="StatusUploadTittle" xml:space="preserve">
+	    <value>Upload Status</value>
+	    <comment>label Message for Upload Status</comment>
+	</data>
+
+	<data name="AskUploadTittle" xml:space="preserve">
+	    <value>Upload Pertanyaan</value>
+	    <comment>label Message for Upload Status</comment>
+	</data>
+
+	<data name="CommentUploadTittle" xml:space="preserve">
+	    <value>Upload Komentar</value>
+	    <comment>label Message for Upload Status</comment>
+	</data>
+
+	<data name="ListVideoStatusMessage" xml:space="preserve">
+	    <value>Tidak ada video</value>
+	    <comment>label Message for List Video Status</comment>
+	</data>
+
+	<data name="AskTittle" xml:space="preserve">
+	    <value>Pertanyaan Isyarat</value>
+	    <comment>label Message for Asked Sign</comment>
+	</data>
+</root>

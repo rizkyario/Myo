@@ -1,10 +1,49 @@
-﻿<Properties StartupItem="Myo/Myo.csproj" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+﻿<Properties StartupItem="Aura/iOS/Aura.iOS.csproj" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.Ario's iPhone" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Aura/iOS/Renderer/MyoSensoriOS.cs">
+    <Files>
+      <File FileName="Aura/iOS/Renderer/MyoSensoriOS.cs" Line="184" Column="26" />
+      <File FileName="Aura/Aura/Models/MyoData.cs" Line="88" Column="4" />
+      <File FileName="Aura/Aura/App.xaml.cs" Line="40" Column="39" />
+      <File FileName="Aura/Aura/Pages/MainMenu.xaml.cs" Line="38" Column="18" />
+      <File FileName="Aura/Aura/App.xaml" Line="10" Column="45" />
+      <File FileName="Aura/Aura/Pages/MainMenu.xaml" Line="65" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Myo" expanded="True">
+            <Node name="Aura" expanded="True">
+              <Node name="Packages" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="MainMenu.xaml" expanded="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+              <Node name="App.xaml" expanded="True" />
+            </Node>
+            <Node name="Aura.iOS" expanded="True">
+              <Node name="ComponentReferenceFolder" expanded="True" />
+              <Node name="Packages" expanded="True" />
+              <Node name="Renderer" expanded="True">
+                <Node name="MyoSensoriOS.cs" selected="True" />
+              </Node>
+              <Node name="Resources" expanded="True" />
+            </Node>
+            <Node name="Myo" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../MyoSampleApp/MainPageViewController.cs" line="176" offsetX="285" offsetY="2625" expression="pose.Type" liveUpdate="False" />
+    <Watch file="Aura/iOS/Renderer/MyoSensoriOS.cs" line="183" offsetX="1165" offsetY="2744" expression="accelerationVector.X" liveUpdate="False" />
+    <Watch file="Aura/iOS/Renderer/MyoSensoriOS.cs" line="184" offsetX="1165" offsetY="2786" expression="accelerationVector.Y" liveUpdate="False" />
+    <Watch file="Aura/iOS/Renderer/MyoSensoriOS.cs" line="185" offsetX="1168" offsetY="2839" expression="accelerationVector.Z" liveUpdate="False" />
+    <Watch file="Aura/Aura/Models/MyoData.cs" line="98" offsetX="620" offsetY="1462" expression="value[0][0]" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>

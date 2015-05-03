@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="Aura.SettingsPage"
+	xmlns:local="clr-namespace:Aura;assembly=Aura"
+	Title="Settings"
+	>
+	<Grid BackgroundColor="White" RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>	
+		<Grid BackgroundColor="{StaticResource DarkGreen}" Grid.Row="0" Style="{StaticResource TopBarStyle}">
+		<Label Text="Settings" Style="{StaticResource TopBarLabelStyle}"/>
+		<Button Text=""
+		       Clicked="OnXBtnClicked"
+		       HorizontalOptions="Start"
+		       Style="{StaticResource TopBarButtonStyle}"/>			
+		</Grid>
+		<TableView Grid.Row="1">
+			<TableView.Root>
+		    	<TableSection>
+		    		<SwitchCell Text="Vibration" />
+					<SwitchCell Text="Always On"/>
+					<SwitchCell Text="Diagnostics"/>
+				</TableSection>
+				<TableSection>
+					<ViewCell>
+		                <ViewCell.View>
+		                    <Grid Padding="15,0,15,0">
+		                        <Label Text ="Myo Sensors" HorizontalOptions="Start" VerticalOptions="Center"/>
+		                        <Button HorizontalOptions="End" Text="Connect" TextColor="Blue" Clicked="OnConnectButtonClicked" VerticalOptions="Center"/>
+		                    </Grid>      
+		                </ViewCell.View>
+		    		</ViewCell>
+		    	</TableSection>
+		    	<TableSection>
+					<ViewCell>
+		                <ViewCell.View>
+		                    <Grid Padding="15,0,15,0">
+		                        <Button HorizontalOptions="Center" Text="Logout" TextColor="Red" Clicked="OnLogoutBtnClicked" Font="Blod" VerticalOptions="Center"/>
+		                    </Grid>      
+		                </ViewCell.View>
+		    		</ViewCell>
+		    	</TableSection>
+			</TableView.Root>
+		</TableView>	
+	</Grid>      
+</ContentPage>
+	

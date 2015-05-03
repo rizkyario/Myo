@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+
+	<data name="HomePageLabel" xml:space="preserve">
+	    <value>Home</value>
+	    <comment>label for Home Page label</comment>
+	</data>
+
+	<data name="ProfilePageLabel" xml:space="preserve">
+	    <value>Profile</value>
+	    <comment>label for Profile</comment>
+	</data>
+	    
+	<data name="DictionaryLabel" xml:space="preserve">
+	    <value>Dictionary</value>
+	    <comment>label for Dictionary Menu</comment>
+	</data>
+
+	<data name="GameLabel" xml:space="preserve">
+	    <value>Game</value>
+	    <comment>label for Game Menu</comment>
+	</data>
+
+	<data name="PopularLabel" xml:space="preserve">
+	    <value>Popular</value>
+	    <comment>label for Popular Menu</comment>
+	</data>
+
+	<data name="SOTDLabel" xml:space="preserve">
+	    <value>Sign of The Day</value>
+	    <comment>label for Sign of The Day Menu</comment>
+	</data>
+
+	<data name="AskSignLabel" xml:space="preserve">
+	    <value>Ask Sign</value>
+	    <comment>label for Ask Sign Menu</comment>
+	</data>
+
+	<data name="AskSignLabel" xml:space="preserve">
+	    <value>Ask Sign</value>
+	    <comment>label for Ask Sign Menu</comment>
+	</data>
+
+	<data name="EditBtnLabel" xml:space="preserve">
+	    <value>Edit</value>
+	    <comment>label for Edit Activity</comment>
+	</data>
+
+	<data name="DeleteBtnLabel" xml:space="preserve">
+	    <value>Delete</value>
+	    <comment>label for Delete Activity</comment>
+	</data>
+
+	<data name="ReportBtnLabel" xml:space="preserve">
+	    <value>Report Innapropriate</value>
+	    <comment>label for Report Innapropriate Activity</comment>
+	</data>
+
+	<data name="LikeLabel" xml:space="preserve">
+	    <value>Like</value>
+	    <comment>label for Like Activity</comment>
+	</data>
+
+	<data name="LikedLabel" xml:space="preserve">
+	    <value>Liked</value>
+	    <comment>label for Liked Activity</comment>
+	</data>
+
+	<data name="CommentLabel" xml:space="preserve">
+	    <value>Comments</value>
+	    <comment>label for Comment Activity</comment>
+	</data>
+
+
+
+	<data name="LogOutLabel" xml:space="preserve">
+	    <value>Log Out</value>
+	    <comment>label for Log Out</comment>
+	</data>
+
+	<data name="SettingMsgLabel" xml:space="preserve">
+	    <value>What do you want to do?</value>
+	    <comment>label for Setting message</comment>
+	</data>
+
+	<data name="LogOutConfLabel" xml:space="preserve">
+	    <value>Do you really want to logout</value>
+	    <comment>label for Log Out Confirmation</comment>
+	</data>
+
+	<data name="PostPageLabel" xml:space="preserve">
+	    <value>Post Video</value>
+	    <comment>label for Post label</comment>
+	</data>
+
+	<data name="EditPageLabel" xml:space="preserve">
+	    <value>Edit Video</value>
+	    <comment>label for Edit label</comment>
+	</data>
+
+	<data name="PostBtnLabel" xml:space="preserve">
+	    <value>Post</value>
+	    <comment>label for Post btn label</comment>
+	</data>
+
+	<data name="SaveBtnLabel" xml:space="preserve">
+	    <value>Save</value>
+	    <comment>label for Edit btn label</comment>
+	</data>
+
+	<data name="DeleteVideoLabel" xml:space="preserve">
+	    <value>Delete Video?</value>
+	    <comment>label for deleting video</comment>
+	</data>
+
+	<data name="DeleteVideoMsgLabel" xml:space="preserve">
+	    <value>Do you really want to delete this video?</value>
+	    <comment>label for deleting video message</comment>
+	</data>
+
+	<data name="ReportVideoLabel" xml:space="preserve">
+	    <value>Report Video?</value>
+	    <comment>label for reporting video</comment>
+	</data>
+
+	<data name="ReportVideoMsgLabel" xml:space="preserve">
+	    <value>Do you really want to report video?</value>
+	    <comment>label for reporting video message</comment>
+	</data>
+
+	<data name="GameLabel" xml:space="preserve">
+	    <value>Game</value>
+	    <comment>label for Game video label</comment>
+	</data>
+
+	<data name="GameMsgLabel" xml:space="preserve">
+	    <value>The Game menu will be comming soon</value>
+	    <comment>label for Game video message</comment>
+	</data>
+
+	<data name="YesBtnLabel" xml:space="preserve">
+	    <value>Yes</value>
+	    <comment>label for Yes Button</comment>
+	</data>
+
+	<data name="NoBtnLabel" xml:space="preserve">
+	    <value>No</value>
+	    <comment>label for No Button</comment>
+	</data>
+
+	<data name="CancelBtnLabel" xml:space="preserve">
+	    <value>Cancel</value>
+	    <comment>label for Cancel Button</comment>
+	</data>
+
+	<data name="OkBtnLabel" xml:space="preserve">
+	    <value>Ok</value>
+	    <comment>label for Ok Button</comment>
+	</data>
+
+	<data name="VideoSizeTitle" xml:space="preserve">
+	    <value>Video Size</value>
+	    <comment>label for Video Size Alert</comment>
+	</data>
+
+	<data name="VideoSizeMessage" xml:space="preserve">
+	    <value>The Video is too Big! Pick video with duration less than 20 seconds</value>
+	    <comment>label Message for Video Size Alert</comment>
+	</data>
+
+	<data name="VideoSizeSelectAgainMessage" xml:space="preserve">
+	    <value>Select Again</value>
+	    <comment>label Message for Video Size Select Again</comment>
+	</data>
+
+	<data name="StatusUploadTittle" xml:space="preserve">
+	    <value>Upload Status</value>
+	    <comment>label Message for Upload Status</comment>
+	</data>
+
+	<data name="AskUploadTittle" xml:space="preserve">
+	    <value>Upload Question</value>
+	    <comment>label Message for Upload Status</comment>
+	</data>
+
+	<data name="CommentUploadTittle" xml:space="preserve">
+	    <value>Upload Comment</value>
+	    <comment>label Message for Upload Status</comment>
+	</data>
+
+	<data name="ListVideoStatusMessage" xml:space="preserve">
+	    <value>No Video</value>
+	    <comment>label Message for List Video Status</comment>
+	</data>
+
+	<data name="AskTittle" xml:space="preserve">
+	    <value>Asked Sign</value>
+	    <comment>label Message for Asked Sign</comment>
+	</data>
+
+</root>

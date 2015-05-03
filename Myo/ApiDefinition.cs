@@ -41,6 +41,26 @@ namespace Myo
 	}
 
 	[BaseType (typeof (NSObject))]
+	public partial interface TLMUnlockEvent : INSCopying
+	{
+		[Export("myo")] 
+		TLMMyo Myo { get; set; }
+
+		[Export("timestamp")]
+		NSDate Timestamp { get; set; }	}
+
+
+	[BaseType (typeof (NSObject))]
+	public partial interface TLMLockEvent : INSCopying
+	{
+		[Export("myo")] 
+		TLMMyo Myo { get; set; }
+
+		[Export("timestamp")]
+		NSDate Timestamp { get; set; }
+	}
+
+	[BaseType (typeof (NSObject))]
 	public partial interface TLMArmUnsyncEvent : INSCopying
 	{
 		[Export("myo")] 
@@ -96,6 +116,19 @@ namespace Myo
 	}
 
 	[BaseType (typeof (NSObject))]
+	public partial interface TLMEmgEvent : INSCopying
+	{
+		[Export("myo")] 
+		TLMMyo Myo { get; set; }
+
+		[Export("timestamp")]
+		NSDate Timestamp { get; set; }
+
+		[Export("rawData")]
+		NSArray RawData { get; set; }
+	}
+
+	[BaseType (typeof (NSObject))]
 	public partial interface TLMHub
 	{
 		[Export("attachByIdentifier:")] 
@@ -144,11 +177,6 @@ namespace Myo
 		NSString TLMHubDidDisconnectDeviceNotification { get; }
 	}
 
-	[BaseType (typeof (NSObject))]
-	public partial interface TLMLockEvent : INSCopying
-	{
-
-	}
 
 	[BaseType (typeof (NSObject))]
 	public partial interface TLMMyo
@@ -161,6 +189,18 @@ namespace Myo
 		[Export("vibrateWithLength:")]
 		void VibrateWithLength(TLMVibrationLength length);
 
+		[Export("indicateUserAction")]
+		void IndicateUserAction();
+
+		[Export("unlockWithType:")]
+		void UnlockWithType(TLMUnlockType type);
+
+		[Export("lock")]
+		void Lock();
+
+		[Export("setStreamEmg:")]
+		void SetStreamEmg(TLMStreamEmgType type);
+
 		[Export("identifier")]
 		Guid Identifier { get; set; }
 
@@ -169,7 +209,6 @@ namespace Myo
 
 		[Export("state")]
 		TLMMyoConnectionState State  { get; set; }
-
 
 		[Notification, Field("TLMMyoDidReceiveOrientationEventNotification", "__Internal")]
 		NSString TLMMyoDidReceiveOrientationEventNotification { get; }
@@ -195,6 +234,9 @@ namespace Myo
 		[Notification, Field("TLMMyoDidReceiveLockEventNotification", "__Internal")]
 		NSString TLMMyoDidReceiveLockEventNotification { get; }
 
+		[Notification, Field("TLMMyoDidReceiveEmgEventNotification", "__Internal")]
+		NSString TLMMyoDidReceiveEmgEventNotification { get; }
+
 		[Field("kTLMKeyOrientationEvent", "__Internal")]
 		NSString TLMKeyOrientationEvent { get; }
 
@@ -218,6 +260,9 @@ namespace Myo
 
 		[Field("kTLMKeyLockEvent", "__Internal")]
 		NSString TLMKeyLockEvent { get; }
+
+		[Field("kTLMKeyEMGEvent", "__Internal")]
+		NSString TLMKeyEMGEvent { get; }
 
 	}
 
@@ -256,11 +301,5 @@ namespace Myo
 
 		[Static, Export("settingsInPopoverController")] 
 		UIPopoverController SettingsInPopoverController();
-	}
-
-	[BaseType (typeof (NSObject))]
-	public partial interface TLMUnlockEvent : INSCopying
-	{
-
 	}
 }

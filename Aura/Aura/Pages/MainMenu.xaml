@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:local="clr-namespace:Aura;assembly=Aura"
+	xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+	xmlns:charting="clr-namespace:XLabs.Forms.Charting.Controls;assembly=XLabs.Forms.Charting"
+
+	x:Class="Aura.MainMenu">
+	 <MasterDetailPage.Master>
+        <ContentPage Title="Fields" BackgroundColor="{StaticResource DarkBlue}">
+        	<Grid RowSpacing="0" ColumnSpacing="0">
+			<Grid.ColumnDefinitions>
+		        <ColumnDefinition Width="Auto" />
+		        <ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+		        <RowDefinition Height="*" />
+		        <RowDefinition Height="60" />
+			</Grid.RowDefinitions>
+	        	<StackLayout Padding="15,15,0,0" Grid.Column="0">
+	        		<Button Text="" Style="{StaticResource MasterIconStyle}" Clicked="OnMenuBtnClicked" CommandParameter="Aura"/>
+	        		<Button Text="" Style="{StaticResource MasterIconStyle}"  Clicked="OnMenuBtnClicked" CommandParameter="Video Call"/>
+	        		<Button Text="" Style="{StaticResource MasterIconStyle}"  Clicked="OnMenuBtnClicked" CommandParameter="Dictionary"/>
+	        		<Button Text="" Style="{StaticResource MasterIconStyle}"  Clicked="OnMenuBtnClicked" CommandParameter="Train Gestures"/>
+	        	</StackLayout>        	
+	        	<StackLayout Padding="15,15,0,0" Grid.Column="1">
+	        		<Button Text="Aura" Style="{StaticResource MasterLabelStyle}" Clicked="OnMenuBtnClicked" CommandParameter="Aura"/>
+	        		<Button Text="Video Call" Style="{StaticResource MasterLabelStyle}"  Clicked="OnMenuBtnClicked" CommandParameter="Video Call"/>
+	        		<Button Text="Dictionary" Style="{StaticResource MasterLabelStyle}"  Clicked="OnMenuBtnClicked" CommandParameter="Dictionary"/>
+	        		<Button Text="Train Gestures" Style="{StaticResource MasterLabelStyle}"  Clicked="OnMenuBtnClicked" CommandParameter="Train Gestures"/>
+	        	</StackLayout>
+	        	<Grid RowSpacing="0" Padding="-1,0,-1,-1" ColumnSpacing="0" Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+	        	<Grid.ColumnDefinitions>
+			        <ColumnDefinition Width="0.5*" />
+			        <ColumnDefinition Width="0.5*" />
+				</Grid.ColumnDefinitions>
+	        		<Button BorderWidth="0.5" BorderRadius="0" Text="" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Style="{StaticResource MasterIconStyle}" Clicked="OnSettingsBtnClicked" CommandParameter="Fields"/>
+	        		<Button BorderWidth="0.5" BorderRadius="0" Text="" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Style="{StaticResource MasterIconStyle}" Clicked="OnHelpBtnClicked" CommandParameter="Fields"/>
+	        	</Grid>
+			</Grid> 
+			       
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage Title="Aura" BackgroundColor="White">
+			<Grid BackgroundColor="White" RowSpacing="0">
+			<Grid.RowDefinitions>
+		        <RowDefinition Height="Auto" />
+		        <RowDefinition Height="*" />
+			</Grid.RowDefinitions>	
+				<Grid BackgroundColor="{StaticResource DarkGreen}" Grid.Row="0" Style="{StaticResource TopBarStyle}">
+			        <Label x:Name="titleLbl" Style="{StaticResource TopBarLabelStyle}"/>
+					<Button Text=""
+			               Clicked="OnBurgerMenuBtnClicked"
+			               HorizontalOptions="Start"
+			               Style="{StaticResource TopBarButtonStyle}"/>
+				</Grid>
+				<ScrollView Grid.Row="1" >
+
+	                <StackLayout>
+					    <oxy:PlotView x:Name="AccelarationPlot" Model="{Binding AccelarationModel}" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="300" BackgroundColor="White" HeightRequest="200" />
+	                    <oxy:PlotView x:Name="EMGPlot" Model="{Binding EMGModel}" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="300" BackgroundColor="White" HeightRequest="200" />
+	                    <Label Text ="{Binding Status}" HorizontalOptions="Start" VerticalOptions="Center"/>
+	                    <Label Text ="{Binding Pose}" HorizontalOptions="Start" VerticalOptions="Center"/>
+	                </StackLayout>      
+
+				</ScrollView>	
+			</Grid>        
+		</ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

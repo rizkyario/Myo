@@ -1,0 +1,84 @@
+﻿<Application
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Aura.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="DarkBlue">#2c455c</Color>
+            <Color x:Key="LightBlue">#355470</Color>
+            <Color x:Key="GooglePlusRed">#d34836</Color>
+            <Color x:Key="DarkGreen">#270077</Color>
+			<OnPlatform x:TypeArguments="Font" x:Key="FontAwesome">
+			    <OnPlatform.iOS>
+			        <Font FontFamily="FontAwesome" FontSize="14" />
+			    </OnPlatform.iOS>
+				<OnPlatform.Android>
+			        <Font FontFamily="FontAwesome" FontSize="14" />
+			    </OnPlatform.Android>
+			</OnPlatform>  
+			<OnPlatform x:TypeArguments="Font" x:Key="FontAwesomeBar">
+			    <OnPlatform.iOS>
+			        <Font FontFamily="FontAwesome" FontSize="24" />
+			    </OnPlatform.iOS>
+				<OnPlatform.Android>
+			        <Font FontFamily="FontAwesome" FontSize="24" />
+			    </OnPlatform.Android>
+			</OnPlatform>  
+			<OnPlatform x:TypeArguments="Font" x:Key="FontAwesomeHomeLabel">
+			    <OnPlatform.iOS>
+			        <Font FontFamily="FontAwesome" FontSize="52"  />
+			    </OnPlatform.iOS>
+				<OnPlatform.Android>
+			        <Font FontFamily="FontAwesome" FontSize="52"  />
+			    </OnPlatform.Android>
+			</OnPlatform>   
+			<OnPlatform x:TypeArguments="Thickness" x:Key="PaddingBar">
+			        <OnPlatform.iOS>5,15,5,0</OnPlatform.iOS>
+			        <OnPlatform.Android>5,0,5,0</OnPlatform.Android>
+			</OnPlatform>    
+			<OnPlatform x:TypeArguments="x:Double" x:Key="BarHeight">
+			        <OnPlatform.iOS>45</OnPlatform.iOS>
+			        <OnPlatform.Android>45</OnPlatform.Android>
+			</OnPlatform>  
+			<OnPlatform x:TypeArguments="Font" x:Key="CameraIconFont">
+			    <OnPlatform.iOS>
+			        <Font FontFamily="FontAwesome" FontSize="70" />
+			    </OnPlatform.iOS>
+				<OnPlatform.Android>
+			        <Font FontFamily="FontAwesome" FontSize="70" />
+			    </OnPlatform.Android>
+			</OnPlatform>       
+
+			<Style x:Key="TopBarLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Font" Value="Bold"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+
+            <Style x:Key="TopBarButtonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Font" Value="{StaticResource FontAwesomeBar}"/>
+            </Style>  
+
+            <Style x:Key="MasterIconStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Font" Value="{StaticResource FontAwesomeBar}"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+            </Style>
+
+			<Style x:Key="MasterLabelStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="Font" Value="Bold"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+            </Style>
+            <Style x:Key="TopBarStyle" TargetType="Grid">
+                <Setter Property="HeightRequest" Value="{StaticResource BarHeight}"/>
+                <Setter Property="Padding" Value="{StaticResource PaddingBar}"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

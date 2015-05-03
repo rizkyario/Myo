@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CarouselPage Title="IntroPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:local="clr-namespace:Aura;assembly=Aura"
+	x:Class="Aura.IntroPage">
+<!--	<ContentPage>
+       <Grid BackgroundColor="#355470" VerticalOptions="Fill" HorizontalOptions="Fill">
+       		<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+		        <RowDefinition Height="0.7*" />
+		        <RowDefinition Height="0.3*" />
+		    </Grid.RowDefinitions>
+
+			<Label Grid.Row="1" Grid.Column="0" Text="Open Sign Language Dictionary" VerticalOptions="Start" TextColor="White" HorizontalOptions="Center"/>
+		</Grid>
+    </ContentPage>
+    <ContentPage>
+        <Grid BackgroundColor="#355470" VerticalOptions="Fill" HorizontalOptions="Fill">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+		        <RowDefinition Height="0.7*" />
+		        <RowDefinition Height="0.3*" />
+		    </Grid.RowDefinitions>
+
+			<Label Grid.Row="1" Grid.Column="0" Text="Social Sign Language Media" TextColor="White" VerticalOptions="Start" HorizontalOptions="Center"/>
+		</Grid>
+    </ContentPage>-->
+    <ContentPage>
+        <Grid VerticalOptions="Fill" HorizontalOptions="Fill" BackgroundColor="Black">
+	    <Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+		 	<RowDefinition Height="0.2*" />
+		 	<RowDefinition Height="0.3*" />
+		 	<RowDefinition Height="0.2*" />
+	        <RowDefinition Height="0.3*" />
+	    </Grid.RowDefinitions>
+   			 <Image Grid.Row="0" Grid.Column="0"  Grid.RowSpan="4" Opacity="0.7" Source="{local:ImageResource Aura.Resources.loginBg.jpg}" Aspect="AspectFill" VerticalOptions="Fill" HorizontalOptions="Fill" />
+   			 <Image Grid.Row="1" Grid.Column="0" HeightRequest="100" Source="{local:ImageResource Aura.Resources.Logo.png}" Aspect="AspectFit" VerticalOptions="Center" />
+			<StackLayout Grid.Row="2" Grid.Column="0" >
+				<Label Text="Aura" Font="Bold" TextColor="White" VerticalOptions="Start" HorizontalOptions="Center"/>
+				<Label Text="Sign Language Interpreter App" WidthRequest="200" TextColor="White" FontSize="14" VerticalOptions="Start" HorizontalOptions="Center"/>
+			</StackLayout>
+			<StackLayout Grid.Row="3" Grid.Column="0" >
+            	<Button Text="Login with Facebook" BackgroundColor="{StaticResource DarkBlue}" TextColor="White" Clicked="OnFBLoginBtnClicked" VerticalOptions="Start" HorizontalOptions="Fill"/>
+            	<Button Text="Login with Google" BackgroundColor="{StaticResource GooglePlusRed}" TextColor="White" Clicked="OnGoogleLoginBtnClicked" VerticalOptions="Start" HorizontalOptions="Fill"/>
+			</StackLayout>
+		</Grid>
+    </ContentPage>
+</CarouselPage>

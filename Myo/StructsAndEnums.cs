@@ -22,6 +22,14 @@ namespace Myo
 		TLMVibrationLengthMedium,
 		TLMVibrationLengthLong
 	}
+		
+	public enum TLMStreamEmgType
+	{
+		TLMStreamEmgDisabled,
+		TLMStreamEmgEnabled
+	}
+
+
 	public enum TLMUnlockType
 	{
 		TLMUnlockTypeTimed,
