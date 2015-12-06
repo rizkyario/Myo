@@ -16,7 +16,15 @@ namespace Aura.iOS
 				var pref = NSLocale.PreferredLanguages [0];
 				netLanguage = pref.Replace ("_", "-"); // turns pt_BR into pt-BR
 			}
-			return new System.Globalization.CultureInfo(netLanguage);
+
+			System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo ("en");
+
+			try {
+				culture = new System.Globalization.CultureInfo (netLanguage);
+			} catch (Exception e) {
+
+			}
+			return culture;
 		}
 	}
 }

@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:TabbedPageCustom xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="Aura.TrainingPage"
+	xmlns:local="clr-namespace:Aura;assembly=Aura"
+	xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+	Title="Pupil Profile">
+	<ContentPage>
+	<Grid BackgroundColor="White" RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		    <RowDefinition Height="{StaticResource BarHeight}"/>
+		</Grid.RowDefinitions>	
+		<Grid BackgroundColor="{StaticResource ForeColor}" Grid.Row="0" Style="{StaticResource TopBarStyle}">
+		<Label Text="Training Gesture" Style="{StaticResource TopBarLabelStyle}"/>
+		<Button Text=""
+		       Clicked="OnXBtnClicked"
+		       HorizontalOptions="Start"
+		       Style="{StaticResource TopBarButtonStyle}"
+		       BackgroundColor="Transparent"/>					
+		</Grid>
+        <Grid HorizontalOptions="Center" Grid.Row="1" RowSpacing="0" ColumnSpacing="0" >
+	  		<Grid.RowDefinitions>
+			    <RowDefinition Height="180"></RowDefinition>
+				<RowDefinition Height="*"></RowDefinition>
+	    	</Grid.RowDefinitions>
+	    
+			<Grid Grid.Row="0" BackgroundColor="{StaticResource DarkBlue}">	
+	    		<Grid HeightRequest="180" WidthRequest="310" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+		    	<Image  HeightRequest="180" WidthRequest="310" Source="{Binding SelectedSign.Image}" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center"/>
+				<Button Text="" Font="{StaticResource CameraIconFont}" BackgroundColor="Transparent" TextColor="{StaticResource LightGray}" Opacity="0.7" Clicked="OnPlayClicked" CommandParameter="{Binding SelectedSign}" IsVisible="{Binding SelectedSign.IsNotActive}" HorizontalOptions="Center" VerticalOptions="Center"/>
+		    	<local:VideoCustomView HeightRequest="180" WidthRequest="310" GIFSource="{Binding SelectedSign.Image}"  IsVisible="{Binding SelectedSign.IsActive}" FileSource="{Binding SelectedSign.Video}" HorizontalOptions="Center" VerticalOptions="Center"/>
+	    	</Grid>
+
+			<StackLayout Grid.Row="1" Padding="15,15,0,15" Spacing="0">
+				<Grid>
+		    	    <Label  Text="{Binding SelectedSign.Word}" Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Start"/>
+					<Label Text="{Binding SelectedSign.Location}" TextColor="Black" HorizontalOptions="End"></Label>		
+				</Grid>
+				<Label x:Name="GestureCount" TextColor="Black" HorizontalOptions="Start"/>	    
+				<StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+					<Entry x:Name="iterationLabel" Text="5000" WidthRequest="100"/>
+					<Entry x:Name="layerLabel" Text="100" WidthRequest="100"/>
+				</StackLayout>	
+				<Button Text="Train Gesture" Clicked="OnTrainButtonClicked" IsEnabled="{Binding GesturesVM.IsNotBusy}"/>
+				<Button Text="Recognize Gesture" Clicked="OnDetectButtonClicked" IsEnabled="{Binding GesturesVM.IsNotBusy}"/>
+			    <Label x:Name="errorLabel" TextColor="Black" HorizontalOptions="Center"/>	
+			    <Label x:Name="resultLabel" TextColor="Black" HorizontalOptions="Center"/>		    
+			</StackLayout>
+		</Grid>
+        <!--		Bottom Bar-->
+	    <Grid BackgroundColor="{StaticResource LightGrey}" Padding="0,-5,0,5"
+            	   Grid.Row="2"
+			       Grid.Column="0"
+			       x:Name="TabPanel">
+			 <Grid.ColumnDefinitions>
+			 	<ColumnDefinition Width="*" />
+			    <ColumnDefinition Width="*" />
+			    <ColumnDefinition Width="*" />
+			 	<ColumnDefinition Width="*" />
+			 	<ColumnDefinition Width="*" />
+			 </Grid.ColumnDefinitions>
+			    <Grid.Children>
+			    		<Grid Padding="0,-25,0,0" Grid.Column="1" Grid.ColumnSpan="3" >
+							<Label Text="" TextColor="#f8f8f8" HorizontalOptions="Center"  Font="{StaticResource Circle}"/>
+							<Label Text="" TextColor="#ef4e3a" HorizontalOptions="Center" Font="{StaticResource innerCircle}"/>
+							<Button Text="REC" TextColor="White" IsVisible="{Binding IsNotRecording}" Clicked="OnRecordBtnClicked" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" BackgroundColor="Transparent"/>
+							<Button Text="" TextColor="White" IsVisible="{Binding IsRecording}" Clicked="OnStopBtnClicked" HorizontalOptions="Center" VerticalOptions="Center" Font="{StaticResource FontAwesomeBar}" BackgroundColor="Transparent"/>
+				        </Grid>
+
+				        <Button Grid.Column="0" Clicked="OnButtonClicked" CommandParameter="VideoBtn" VerticalOptions="Start" 
+				        		Text=""  Font="{StaticResource FontAwesomeBar}" TextColor="#0079ff" BackgroundColor="Transparent"/>
+				        <Label 	Text = "Video"
+				        		Grid.Column="0" 
+				                HorizontalOptions="Center"
+			                   	VerticalOptions="End"
+				                TextColor="#0079ff"
+				                Font="{StaticResource TabFont}"/>
+				        <Button Grid.Column="1" Clicked="OnButtonClicked"  CommandParameter="GraphBtn" VerticalOptions="Start" 
+				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#444444"/>
+			            <Label 	Text = "Graph"
+			            	   	Grid.Column="1"
+			                   	HorizontalOptions="Center"
+			                   	VerticalOptions="End"
+			                   	TextColor="#444444"
+			                   	Font="{StaticResource TabFont}"/>
+				        <Button Grid.Column="3" Clicked="OnButtonClicked"  CommandParameter="GesturesBtn" IsEnabled="{Binding GesturesVM.IsNotBusy}" VerticalOptions="Start" 
+				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#444444" BackgroundColor="Transparent"/>
+			           	<Label 	Text = "Gestures"
+			            		Grid.Column="3"
+			                   	HorizontalOptions="Center"
+			                   	VerticalOptions="End"
+			                   	TextColor="#444444"
+			                   	Font="{StaticResource TabFont}"/>
+				        <Button Grid.Column="4" Clicked="OnButtonClicked"  CommandParameter="SettingsBtn" VerticalOptions="Start"
+				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#444444" BackgroundColor="Transparent"/>
+			           	<Label 	Text = "Settings"
+			            		Grid.Column="4"
+			                   	HorizontalOptions="Center"
+			                   	VerticalOptions="End"
+			                   	TextColor="#444444"
+			                   	Font="{StaticResource TabFont}"/>
+	
+			    </Grid.Children>
+		</Grid>
+	</Grid> 
+	</ContentPage>
+
+	<ContentPage>
+	<Grid BackgroundColor="White" RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		    <RowDefinition Height="{StaticResource BarHeight}"/>
+		</Grid.RowDefinitions>	
+		<Grid BackgroundColor="{StaticResource ForeColor}" Grid.Row="0" Style="{StaticResource TopBarStyle}">
+		<Label Text="Training Gesture" Style="{StaticResource TopBarLabelStyle}"/>
+		<Button Text=""
+		       Clicked="OnXBtnClicked"
+		       HorizontalOptions="Start"
+		       Style="{StaticResource TopBarButtonStyle}"
+		       BackgroundColor="Transparent"/>
+		<Button Text="Save"
+		       Clicked="OnSaveBtnClicked"
+		       HorizontalOptions="End"
+		       Style="{StaticResource TopBarLabelButtonStyle}"
+		       BackgroundColor="Transparent"/>					
+		</Grid>
+        <ScrollView Grid.Row="1" x:Name="scrollView">
+
+            <StackLayout >
+			    <oxy:PlotView x:Name="AccelarationPlot" Model="{Binding RecordedAccelarationModel}" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="300" BackgroundColor="White" HeightRequest="200" />
+<!--                <oxy:PlotView x:Name="EMGPlot" Model="{Binding RecordedEMGModel}" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="300" BackgroundColor="White" HeightRequest="200" />-->
+                <BoxView HeightRequest="100"/>
+                <BoxView HeightRequest="100"/>
+
+            </StackLayout>      
+		</ScrollView>	
+        <!--		Bottom Bar-->
+	    <Grid BackgroundColor="{StaticResource LightGrey}" Padding="0,-5,0,5"
+            	   Grid.Row="2"
+			       Grid.Column="0">
+			 <Grid.ColumnDefinitions>
+			 	<ColumnDefinition Width="*" />
+			    <ColumnDefinition Width="*" />
+			    <ColumnDefinition Width="*" />
+			 	<ColumnDefinition Width="*" />
+			 	<ColumnDefinition Width="*" />
+			 </Grid.ColumnDefinitions>
+			    <Grid.Children>
+			    		<Grid Padding="0,-25,0,0" Grid.Column="1" Grid.ColumnSpan="3" >
+							<Label Text="" TextColor="#f8f8f8" HorizontalOptions="Center"  Font="{StaticResource Circle}"/>
+							<Label Text="" TextColor="#ef4e3a" HorizontalOptions="Center" Font="{StaticResource innerCircle}"/>
+							<Button Text="REC" TextColor="White" IsVisible="{Binding IsNotRecording}" Clicked="OnRecordBtnClicked" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" BackgroundColor="Transparent"/>
+							<Button Text="" TextColor="White" IsVisible="{Binding IsRecording}" Clicked="OnStopBtnClicked" HorizontalOptions="Center" VerticalOptions="Center" Font="{StaticResource FontAwesomeBar}" BackgroundColor="Transparent"/>
+				        </Grid>
+
+				        <Button Grid.Column="0" Clicked="OnButtonClicked" CommandParameter="VideoBtn" VerticalOptions="Start" 
+				        		Text=""  Font="{StaticResource FontAwesomeBar}" TextColor="#444444" BackgroundColor="Transparent"/>
+				        <Label 	Text = "Video"
+				        		Grid.Column="0" 
+				                HorizontalOptions="Center"
+			                   	VerticalOptions="End"
+				                TextColor="#444444"
+				                Font="{StaticResource TabFont}"/>
+				        <Button Grid.Column="1" Clicked="OnButtonClicked"  CommandParameter="GraphBtn" VerticalOptions="Start" 
+				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#0079ff"/>
+			            <Label 	Text = "Graph"
+			            	   	Grid.Column="1"
+			                   	HorizontalOptions="Center"
+			                   	VerticalOptions="End"
+			                   	TextColor="#0079ff"
+			                   	Font="{StaticResource TabFont}"/>
+				        <Button Grid.Column="3" Clicked="OnButtonClicked"  CommandParameter="GesturesBtn" IsEnabled="{Binding GesturesVM.IsNotBusy}" VerticalOptions="Start" 
+				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#444444" BackgroundColor="Transparent"/>
+			           	<Label 	Text = "Gestures"
+			            		Grid.Column="3"
+			                   	HorizontalOptions="Center"
+			                   	VerticalOptions="End"
+			                   	TextColor="#444444"
+			                   	Font="{StaticResource TabFont}"/>
+				        <Button Grid.Column="4" Clicked="OnButtonClicked"  CommandParameter="SettingsBtn" VerticalOptions="Start"
+				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#444444" BackgroundColor="Transparent"/>
+			           	<Label 	Text = "Settings"
+			            		Grid.Column="4"
+			                   	HorizontalOptions="Center"
+			                   	VerticalOptions="End"
+			                   	TextColor="#444444"
+			                   	Font="{StaticResource TabFont}"/>
+	
+			    </Grid.Children>
+		</Grid>
+	</Grid> 
+	</ContentPage>
+
+	<ContentPage>
+	<Grid BackgroundColor="{StaticResource LightBlue}" RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		    <RowDefinition Height="{StaticResource BarHeight}"/>
+		</Grid.RowDefinitions>	
+		<Grid BackgroundColor="{StaticResource ForeColor}" Grid.Row="0" Style="{StaticResource TopBarStyle}">
+		<Label Text="Training Gesture" Style="{StaticResource TopBarLabelStyle}"/>
+		<Button Text=""
+		       Clicked="OnXBtnClicked"
+		       HorizontalOptions="Start"
+		       Style="{StaticResource TopBarButtonStyle}"
+		       BackgroundColor="Transparent"/>		
+		<Button Text="Sync"
+		       Clicked="OnSyncBtnClicked"
+		       HorizontalOptions="End"
+		       Style="{StaticResource TopBarLabelButtonStyle}"
+		       BackgroundColor="Transparent"/>							
+		</Grid>
+        <ListView x:Name="list" 
+        	ItemsSource = "{Binding GesturesVM.GestureList}"
+			Grid.Row="1" 
+            SeparatorVisibility="None"
+            HasUnevenRows="True"
+            BackgroundColor="Transparent"
+            HorizontalOptions="Center"
+	        WidthRequest="310">
+		    <ListView.ItemTemplate>
+		      <DataTemplate>
+			      	<ViewCell Height="300">
+	      			    <local:GestureViewCell HorizontalOptions="Center" BindingContext="{Binding .}" />
+			      	</ViewCell>
+		      </DataTemplate>
+		    </ListView.ItemTemplate>
+		  </ListView>
+        <!--		Bottom Bar-->
+	    <Grid BackgroundColor="{StaticResource LightGrey}" Padding="0,-5,0,5"
+            	   Grid.Row="2"
+			       Grid.Column="0">
+			 <Grid.ColumnDefinitions>
+			 	<ColumnDefinition Width="*" />
+			    <ColumnDefinition Width="*" />
+			    <ColumnDefinition Width="*" />
+			 	<ColumnDefinition Width="*" />
+			 	<ColumnDefinition Width="*" />
+			 </Grid.ColumnDefinitions>
+			    <Grid.Children>
+			    		<Grid Padding="0,-25,0,0" Grid.Column="1" Grid.ColumnSpan="3" >
+							<Label Text="" TextColor="#f8f8f8" HorizontalOptions="Center"  Font="{StaticResource Circle}"/>
+							<Label Text="" TextColor="#ef4e3a" HorizontalOptions="Center" Font="{StaticResource innerCircle}"/>
+							<Button Text="REC" TextColor="White" IsVisible="{Binding IsNotRecording}" Clicked="OnRecordBtnClicked" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" BackgroundColor="Transparent"/>
+							<Button Text="" TextColor="White" IsVisible="{Binding IsRecording}" Clicked="OnStopBtnClicked" HorizontalOptions="Center" VerticalOptions="Center" Font="{StaticResource FontAwesomeBar}" BackgroundColor="Transparent"/>
+				        </Grid>
+
+				        <Button Grid.Column="0" Clicked="OnButtonClicked" CommandParameter="VideoBtn" VerticalOptions="Start" 
+				        		Text=""  Font="{StaticResource FontAwesomeBar}" TextColor="#444444" BackgroundColor="Transparent"/>
+				        <Label 	Text = "Video"
+				        		Grid.Column="0" 
+				                HorizontalOptions="Center"
+			                   	VerticalOptions="End"
+				                TextColor="#444444"
+				                Font="{StaticResource TabFont}"/>
+				        <Button Grid.Column="1" Clicked="OnButtonClicked"  CommandParameter="GraphBtn" VerticalOptions="Start" 
+				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#444444"/>
+			            <Label 	Text = "Graph"
+			            	   	Grid.Column="1"
+			                   	HorizontalOptions="Center"
+			                   	VerticalOptions="End"
+			                   	TextColor="#444444"
+			                   	Font="{StaticResource TabFont}"/>
+				        <Button Grid.Column="3" Clicked="OnButtonClicked"  CommandParameter="GesturesBtn" IsEnabled="{Binding GesturesVM.IsNotBusy}" VerticalOptions="Start" 
+				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#0079ff" BackgroundColor="Transparent"/>
+			           	<Label 	Text = "Gestures"
+			            		Grid.Column="3"
+			                   	HorizontalOptions="Center"
+			                   	VerticalOptions="End"
+			                   	TextColor="#0079ff"
+			                   	Font="{StaticResource TabFont}"/>
+				        <Button Grid.Column="4" Clicked="OnButtonClicked"  CommandParameter="SettingsBtn" VerticalOptions="Start"
+				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#444444" BackgroundColor="Transparent"/>
+			           	<Label 	Text = "Settings"
+			            		Grid.Column="4"
+			                   	HorizontalOptions="Center"
+			                   	VerticalOptions="End"
+			                   	TextColor="#444444"
+			                   	Font="{StaticResource TabFont}"/>
+	
+			    </Grid.Children>
+		</Grid>
+	</Grid> 
+	</ContentPage>
+
+	<ContentPage>
+	<Grid BackgroundColor="White" RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		    <RowDefinition Height="{StaticResource BarHeight}"/>
+		</Grid.RowDefinitions>	
+		<Grid BackgroundColor="{StaticResource ForeColor}" Grid.Row="0" Style="{StaticResource TopBarStyle}">
+		<Label Text="Training Gesture" Style="{StaticResource TopBarLabelStyle}"/>
+		<Button Text=""
+		       Clicked="OnXBtnClicked"
+		       HorizontalOptions="Start"
+		       Style="{StaticResource TopBarButtonStyle}"
+		       BackgroundColor="Transparent"/>					
+		</Grid>
+        <TableView Grid.Row="1">
+			<TableView.Root>
+		    	<TableSection>
+					<SwitchCell Text="Automatic" On="{Binding IsAutomatic}"/>
+				</TableSection>
+				<TableSection>
+					<ViewCell>
+		                <ViewCell.View>
+		                    <Grid Padding="15,0,15,0">
+		                        <Label Text ="Myo Sensors" HorizontalOptions="Start" VerticalOptions="Center"/>
+		                        <Button HorizontalOptions="End" Text="Connect" TextColor="Blue" Clicked="OnConnectButtonClicked" VerticalOptions="Center"/>
+		                    </Grid>      
+		                </ViewCell.View>
+		    		</ViewCell>
+		    	</TableSection>
+			</TableView.Root>
+		</TableView>	
+        <!--		Bottom Bar-->
+	    <Grid BackgroundColor="{StaticResource LightGrey}" Padding="0,-5,0,5"
+            	   Grid.Row="2"
+			       Grid.Column="0">
+			 <Grid.ColumnDefinitions>
+			 	<ColumnDefinition Width="*" />
+			    <ColumnDefinition Width="*" />
+			    <ColumnDefinition Width="*" />
+			 	<ColumnDefinition Width="*" />
+			 	<ColumnDefinition Width="*" />
+			 </Grid.ColumnDefinitions>
+			    <Grid.Children>
+			    		<Grid Padding="0,-25,0,0" Grid.Column="1" Grid.ColumnSpan="3" >
+							<Label Text="" TextColor="#f8f8f8" HorizontalOptions="Center"  Font="{StaticResource Circle}"/>
+							<Label Text="" TextColor="#ef4e3a" HorizontalOptions="Center" Font="{StaticResource innerCircle}"/>
+							<Button Text="REC" TextColor="White" IsVisible="{Binding IsNotRecording}" Clicked="OnRecordBtnClicked" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" BackgroundColor="Transparent"/>
+							<Button Text="" TextColor="White" IsVisible="{Binding IsRecording}" Clicked="OnStopBtnClicked" HorizontalOptions="Center" VerticalOptions="Center" Font="{StaticResource FontAwesomeBar}" BackgroundColor="Transparent"/>
+				        </Grid>
+
+				        <Button Grid.Column="0" Clicked="OnButtonClicked" CommandParameter="VideoBtn" VerticalOptions="Start" 
+				        		Text=""  Font="{StaticResource FontAwesomeBar}" TextColor="#444444" BackgroundColor="Transparent"/>
+				        <Label 	Text = "Video"
+				        		Grid.Column="0" 
+				                HorizontalOptions="Center"
+			                   	VerticalOptions="End"
+				                TextColor="#444444"
+				                Font="{StaticResource TabFont}"/>
+				        <Button Grid.Column="1" Clicked="OnButtonClicked"  CommandParameter="GraphBtn" VerticalOptions="Start" 
+				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#444444"/>
+			            <Label 	Text = "Graph"
+			            	   	Grid.Column="1"
+			                   	HorizontalOptions="Center"
+			                   	VerticalOptions="End"
+			                   	TextColor="#444444"
+			                   	Font="{StaticResource TabFont}"/>
+				        <Button Grid.Column="3" Clicked="OnButtonClicked"  CommandParameter="GesturesBtn" IsEnabled="{Binding GesturesVM.IsNotBusy}" VerticalOptions="Start" 
+				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#444444" BackgroundColor="Transparent"/>
+			           	<Label 	Text = "Gestures"
+			            		Grid.Column="3"
+			                   	HorizontalOptions="Center"
+			                   	VerticalOptions="End"
+			                   	TextColor="#444444"
+			                   	Font="{StaticResource TabFont}"/>
+				        <Button Grid.Column="4" Clicked="OnButtonClicked"  CommandParameter="SettingsBtn" VerticalOptions="Start"
+				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#0079ff" BackgroundColor="Transparent"/>
+			           	<Label 	Text = "Settings"
+			            		Grid.Column="4"
+			                   	HorizontalOptions="Center"
+			                   	VerticalOptions="End"
+			                   	TextColor="#0079ff"
+			                   	Font="{StaticResource TabFont}"/>
+	
+			    </Grid.Children>
+		</Grid>
+	</Grid> 
+	</ContentPage>
+</local:TabbedPageCustom>
+	

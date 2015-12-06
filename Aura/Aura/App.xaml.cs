@@ -30,14 +30,16 @@ namespace Aura
 		public const string debugNumber	   = "0";
 		public const string localDbPath    = "Aura"+debugNumber+".db";
 
-		public const string insightKey    = "5933ec69af0ce2e3a11b0163bfc0752c71202771";
+		public const string insightKey    = "9541cbaf8298af0bd9ce18375264b234ff3c3530";
 
 		static volatile App _Instance;
 		static object _SyncRoot = new Object();
 
 		public static UserService UserServer;
+		public static SignService SignServer;
+		public static GestureService GestureServer;
 
-		public static MyoData MyoDataStream;
+		static public AuraViewModel AuraVM;
 
 		public static App Instance {
 			get {
@@ -56,13 +58,12 @@ namespace Aura
 			InitializePage ();
 		}
 
-		public void InitializePage (){
+		public async void InitializePage (){
 			NavigationPage NavPage;
 			Insights.Identify(Insights.Traits.GuestIdentifier, null);
 
-			App.MyoDataStream = new MyoData ();
-
 			if (Settings.CurrentUser != null) {
+				
 				var traits = new Dictionary<string, string> {
 					{ Insights.Traits.Email, Settings.CurrentUser.Email },
 					{ Insights.Traits.Name, Settings.CurrentUser.Name }

@@ -1,8 +1,14 @@
-// Helpers/Settings.cs
-using Refractored.Xam.Settings;
-using Refractored.Xam.Settings.Abstractions;
+
 using Newtonsoft.Json;
 using System;
+using System.IO;
+using Accord.Neuro.Networks;
+using Newtonsoft.Json.Serialization;
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+using Accord.Neuro.ActivationFunctions;
+using Plugin.Settings.Abstractions;
+using Plugin.Settings;
 
 namespace Aura.Helpers
 {
@@ -49,6 +55,8 @@ namespace Aura.Helpers
 			}
 		}
 
+
+
 		public static string LocationSettings {
 			get {
 				return CurrentUser.Location;
@@ -61,6 +69,8 @@ namespace Aura.Helpers
 		}
 
 	}
+
+
 
 	public class OAuthSettings
 	{

@@ -8,6 +8,19 @@
             <Color x:Key="LightBlue">#355470</Color>
             <Color x:Key="GooglePlusRed">#d34836</Color>
             <Color x:Key="DarkGreen">#270077</Color>
+            <Color x:Key="LighterBlue"> #79a3c7</Color>
+            <Color x:Key="LightGray">#E8E8E8</Color>
+            <Color x:Key="ForeColor">#2c455c</Color> /*DarkBlue*/
+            <Color x:Key="LightGrey">#f8f8f8</Color>
+
+            <OnPlatform x:TypeArguments="Font" x:Key="FontAwesomeButton">
+			    <OnPlatform.iOS>
+			        <Font FontFamily="FontAwesome" FontSize="16" />
+			    </OnPlatform.iOS>
+				<OnPlatform.Android>
+			        <Font FontFamily="FontAwesome" FontSize="16" />
+			    </OnPlatform.Android>
+			</OnPlatform>  
 			<OnPlatform x:TypeArguments="Font" x:Key="FontAwesome">
 			    <OnPlatform.iOS>
 			        <Font FontFamily="FontAwesome" FontSize="14" />
@@ -36,9 +49,9 @@
 			        <OnPlatform.iOS>5,15,5,0</OnPlatform.iOS>
 			        <OnPlatform.Android>5,0,5,0</OnPlatform.Android>
 			</OnPlatform>    
-			<OnPlatform x:TypeArguments="x:Double" x:Key="BarHeight">
-			        <OnPlatform.iOS>45</OnPlatform.iOS>
-			        <OnPlatform.Android>45</OnPlatform.Android>
+			<OnPlatform x:TypeArguments="GridLength" x:Key="BarHeight">
+			        <OnPlatform.iOS>60</OnPlatform.iOS>
+			        <OnPlatform.Android>60</OnPlatform.Android>
 			</OnPlatform>  
 			<OnPlatform x:TypeArguments="Font" x:Key="CameraIconFont">
 			    <OnPlatform.iOS>
@@ -55,7 +68,13 @@
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
-
+             <Style x:Key="TopBarLabelButtonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Font" Value="Bold"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+               	<Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
             <Style x:Key="TopBarButtonStyle" TargetType="Button">
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="Font" Value="{StaticResource FontAwesomeBar}"/>
@@ -79,6 +98,58 @@
                 <Setter Property="HeightRequest" Value="{StaticResource BarHeight}"/>
                 <Setter Property="Padding" Value="{StaticResource PaddingBar}"/>
             </Style>
+
+            <Style x:Key="ListViewButtonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource LighterBlue}"/>
+                <Setter Property="Font" Value="{StaticResource FontAwesomeButton}"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="WidthRequest" Value="30"/>
+            </Style> 
+             <Style x:Key="ListViewLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource LighterBlue}"/>
+                <Setter Property="Font" Value="{StaticResource FontAwesome}"/>
+            </Style>
+            <Style x:Key="ListViewButtonTittleStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Font" Value="Bold"/>
+            </Style>
+
+            <OnPlatform x:TypeArguments="Font" x:Key="Circle">
+			    <OnPlatform.iOS>
+			        <Font FontFamily="FontAwesome" FontSize="90" />
+			    </OnPlatform.iOS>
+				<OnPlatform.Android>
+			        <Font FontFamily="FontAwesome" FontSize="90" />
+			    </OnPlatform.Android>
+			</OnPlatform>
+
+
+			<OnPlatform x:TypeArguments="Font" x:Key="innerCircle">
+			    <OnPlatform.iOS>
+			        <Font FontFamily="FontAwesome" FontSize="80" />
+			    </OnPlatform.iOS>
+				<OnPlatform.Android>
+			        <Font FontFamily="FontAwesome" FontSize="80" />
+			    </OnPlatform.Android>
+			</OnPlatform>
+
+			<OnPlatform x:TypeArguments="Font" x:Key="CircleButton">
+			    <OnPlatform.iOS>
+			        <Font FontFamily="FontAwesome" FontSize="60" />
+			    </OnPlatform.iOS>
+				<OnPlatform.Android>
+			        <Font FontFamily="FontAwesome" FontSize="60" />
+			    </OnPlatform.Android>
+			</OnPlatform>
+
+            <OnPlatform x:TypeArguments="Font" x:Key="TabFont">
+			    <OnPlatform.iOS>
+			        <Font FontSize="12" />
+			    </OnPlatform.iOS>
+				<OnPlatform.Android>
+			        <Font FontSize="12" />
+			    </OnPlatform.Android>
+			</OnPlatform> 
         </ResourceDictionary>
     </Application.Resources>
 </Application>

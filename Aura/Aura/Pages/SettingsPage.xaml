@@ -20,9 +20,7 @@
 		<TableView Grid.Row="1">
 			<TableView.Root>
 		    	<TableSection>
-		    		<SwitchCell Text="Vibration" />
-					<SwitchCell Text="Always On"/>
-					<SwitchCell Text="Diagnostics"/>
+					<SwitchCell Text="Automatic" On="{Binding IsAutomatic}"/>
 				</TableSection>
 				<TableSection>
 					<ViewCell>

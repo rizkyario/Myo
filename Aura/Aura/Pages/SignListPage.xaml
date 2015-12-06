@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:local="clr-namespace:Aura;assembly=Aura"
+	x:Class="Aura.SignListPage"
+	Title="SignListPage">
+
+  	<Grid BackgroundColor="{StaticResource LightBlue}" RowSpacing="0">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+	</Grid.RowDefinitions>	
+		<Grid BackgroundColor="{StaticResource DarkBlue}" Grid.Row="0" Style="{StaticResource TopBarStyle}">
+		    <Label x:Name="PageLabel" Style="{StaticResource TopBarLabelStyle}"/>
+			<ActivityIndicator
+				 	Color = "White"
+				 	HorizontalOptions="End"
+					IsRunning="true"
+					IsVisible="{Binding IsBusy}"/>
+			<Button Text=""
+		           Clicked="OnXBtnClicked"
+		           HorizontalOptions="Start"
+		           Style="{StaticResource TopBarButtonStyle}"/>
+		</Grid>
+		<ListView x:Name="list" 
+			Grid.Row="1"
+            ItemsSource="{Binding SignsFiltered, Mode=OneWay}" 
+            ItemTapped="OnItemSelected"
+            HasUnevenRows="True"
+            SeparatorVisibility="None"
+            BackgroundColor="Transparent"
+            HorizontalOptions="Center"
+	        WidthRequest="310">
+		    <ListView.ItemTemplate>
+		      <DataTemplate>
+			      	<ViewCell Height="420">
+			      		<Grid HorizontalOptions="Center" RowSpacing="0" ColumnSpacing="0">
+				      		<Grid.RowDefinitions>
+							    <RowDefinition Height="5"></RowDefinition>
+							    <RowDefinition Height="40"></RowDefinition>
+							    <RowDefinition Height="310"></RowDefinition>
+							    <RowDefinition Height="45"></RowDefinition>
+					    	</Grid.RowDefinitions>
+					    	<Grid.ColumnDefinitions>
+							    <ColumnDefinition Width="40"></ColumnDefinition>
+							    <ColumnDefinition Width="270"></ColumnDefinition>
+						    </Grid.ColumnDefinitions>
+								
+							<local:ImageCircle Grid.Row="1" Grid.Column="0" WidthRequest="35" HeightRequest="35" Source="{Binding Image}" Aspect="AspectFill"  VerticalOptions="Center" HorizontalOptions="Center" />
+					        <Grid Grid.Row="1" Grid.Column="1">
+								<Grid.RowDefinitions>
+								    <RowDefinition Height="0.5*"></RowDefinition>
+								    <RowDefinition Height="0.5*"></RowDefinition>
+						    	</Grid.RowDefinitions>
+						    	<Grid.ColumnDefinitions>
+								    <ColumnDefinition Width="*"></ColumnDefinition>
+							    </Grid.ColumnDefinitions>
+					    	    <Button  Text="{Binding Word}" Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent" Style="{StaticResource ListViewButtonTittleStyle}" HorizontalOptions="Start"/>
+		      					<Label   Grid.Row="1" Grid.Column="0" Text="{Binding Location}" Style="{StaticResource ListViewLabelStyle}" XAlign="Start" LineBreakMode="TailTruncation" VerticalOptions="Center"></Label>		    	
+			      			</Grid>
+							<Grid Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0" BackgroundColor="{StaticResource DarkBlue}">	
+					    		<Grid HeightRequest="310" WidthRequest="310" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+						    	<Image  HeightRequest="310" WidthRequest="310" Source="{Binding Image}" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center"/>
+					    		<Button Text="" Font="{StaticResource CameraIconFont}" BackgroundColor="Transparent" TextColor="{StaticResource LightGray}" Opacity="0.7" Clicked="OnPlayClicked" CommandParameter="{Binding .}" IsVisible="{Binding IsNotActive}" HorizontalOptions="Center" VerticalOptions="Center"/>
+						    	<local:VideoCustomView HeightRequest="310" WidthRequest="310" IsVisible="{Binding IsActive}" GIFSource="{Binding Image}" FileSource="{Binding  Video}" HorizontalOptions="Center" VerticalOptions="Center"/>
+					    	</Grid>
+					    	<Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="{StaticResource DarkBlue}">
+			      				<Button Text=""  HorizontalOptions="End" VerticalOptions="Start" Style="{StaticResource ListViewButtonStyle}"/>
+		      				</Grid>
+			      		</Grid>
+			      	</ViewCell>
+		      </DataTemplate>
+		    </ListView.ItemTemplate>
+		  </ListView>
+	</Grid>
+</ContentPage>

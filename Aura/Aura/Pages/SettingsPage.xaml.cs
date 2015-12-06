@@ -12,6 +12,7 @@ namespace Aura
 		{
 			NavigationPage.SetHasNavigationBar(this, false);
 			InitializeComponent ();
+			BindingContext = App.AuraVM;
 		}
 
 		public void OnConnectButtonClicked (object o, EventArgs e)

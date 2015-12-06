@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:local="clr-namespace:Aura;assembly=Aura" 
+	x:Class="Aura.WordListPage"
+	Title="WordListPage">
+	<Grid BackgroundColor="{StaticResource LightBlue}" RowSpacing="0">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+	</Grid.RowDefinitions>	
+		<Grid BackgroundColor="{StaticResource DarkBlue}" Grid.Row="0" Style="{StaticResource TopBarStyle}">
+		    <Label Text="{local:Translate DictionaryLabel}" Style="{StaticResource TopBarLabelStyle}"/>
+			<ActivityIndicator
+				 	Color = "White"
+				 	HorizontalOptions="End"
+					IsRunning="true"
+					IsVisible="{Binding IsLoadingDictionary}"/>
+			<Button Text=""
+	               Clicked="OnBurgerMenuBtnClicked"
+	               HorizontalOptions="Start"
+	               Style="{StaticResource TopBarButtonStyle}"/>
+		    </Grid>
+		<ListView x:Name="list" 
+			Grid.Row="1"
+            ItemsSource="{Binding SignsGrouped}" 
+            ItemTapped="OnItemSelected"
+            IsGroupingEnabled="True"
+            GroupDisplayBinding="{Binding Key}"
+            GroupShortNameBinding="{Binding Key}"
+            HasUnevenRows="True"
+            BackgroundColor="White">
+		    <ListView.GroupHeaderTemplate>
+		      <DataTemplate>
+		        <ViewCell Height="25" >
+		          <StackLayout 	VerticalOptions="FillAndExpand"
+								Padding="5"
+		          		        BackgroundColor="#355470">
+		            <Label Text="{Binding Key}" TextColor="White" VerticalOptions="Center" />
+		          </StackLayout>
+		        </ViewCell>
+		      </DataTemplate>
+		    </ListView.GroupHeaderTemplate>
+		    <ListView.ItemTemplate>
+		      <DataTemplate>
+		      	<ViewCell Height="100">
+		      		<Grid Padding="5">
+			      		<Grid.RowDefinitions>
+						    <RowDefinition Height="40"></RowDefinition>
+						    <RowDefinition Height="40"></RowDefinition>
+				    	</Grid.RowDefinitions>
+				    	<Grid.ColumnDefinitions>
+						    <ColumnDefinition Width="80"></ColumnDefinition>
+						    <ColumnDefinition Width="*"></ColumnDefinition>
+					    </Grid.ColumnDefinitions>
+					    <StackLayout Grid.Row="0" Grid.Column="1">
+					    	<Label  Text="{Binding Word}" TextColor="Black" LineBreakMode="TailTruncation"></Label>
+					    	<Label  Text="{Binding Location}" Font="Small" TextColor="Black" LineBreakMode="WordWrap"></Label>
+					    </StackLayout>
+					    <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Source="{Binding Image}" Aspect="AspectFill" BackgroundColor="Gray"/>
+		      		</Grid>
+		      	</ViewCell>
+		      </DataTemplate>
+		    </ListView.ItemTemplate>
+		  </ListView>
+		</Grid>
+</ContentPage>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:local="clr-namespace:Aura;assembly=Aura"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Aura.GestureViewCell"
+	xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms">
+	<ContentView.Content>
+	<Grid HorizontalOptions="Center" RowSpacing="0" ColumnSpacing="0">
+  		<Grid.RowDefinitions>
+		    <RowDefinition Height="5"></RowDefinition>
+		    <RowDefinition Height="40"></RowDefinition>
+		    <RowDefinition Height="200"></RowDefinition>
+		    <RowDefinition Height="45"></RowDefinition>
+    	</Grid.RowDefinitions>
+    	<Grid.ColumnDefinitions>
+		    <ColumnDefinition Width="40"></ColumnDefinition>
+		    <ColumnDefinition Width="270"></ColumnDefinition>
+	    </Grid.ColumnDefinitions>
+	    <local:ImageCircle Grid.Row="1" Grid.Column="0" WidthRequest="35" HeightRequest="35"  x:Name="profilPic" Aspect="AspectFill"  VerticalOptions="Center" HorizontalOptions="Center" />
+		<Grid Grid.Row="1" Grid.Column="1">
+			<Grid.RowDefinitions>
+			    <RowDefinition Height="0.5*"></RowDefinition>
+			    <RowDefinition Height="0.5*"></RowDefinition>
+	    	</Grid.RowDefinitions>
+	    	<Grid.ColumnDefinitions>
+			    <ColumnDefinition Width="*"></ColumnDefinition>
+		    </Grid.ColumnDefinitions>
+		    <Button  x:Name="nameBtn" Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent" Style="{StaticResource ListViewButtonTittleStyle}" HorizontalOptions="Start"/>
+			<Label   Grid.Row="1" Grid.Column="0" Text="{Binding Location}" Style="{StaticResource ListViewLabelStyle}" XAlign="Start" LineBreakMode="TailTruncation" VerticalOptions="Center"></Label>		    	
+		</Grid>
+		<Grid Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0" BackgroundColor="{StaticResource DarkBlue}">
+			<Grid.ColumnDefinitions>
+			    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+			    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+		    </Grid.ColumnDefinitions>
+			<oxy:PlotView IsVisible="true" Grid.Column="0" x:Name="AccPlot" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="300" BackgroundColor="White" HeightRequest="200" />
+			<oxy:PlotView IsVisible="true" Grid.Column="1" x:Name="EMGPlot" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="300" BackgroundColor="White" HeightRequest="200" />
+<!--				<charting:Chart Color="White" x:Name="GesturePlot" HorizontalOptions="Center" WidthRequest="300" BackgroundColor="White" HeightRequest="200"  Spacing="10"/>-->
+    	</Grid>
+    	<Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="{StaticResource DarkBlue}">
+			<Button Text=""  HorizontalOptions="End" VerticalOptions="Start" Style="{StaticResource ListViewButtonStyle}" x:Name="MoreBtn"/>
+		</Grid>
+	</Grid>
+	</ContentView.Content>
+</ContentView>

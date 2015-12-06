@@ -24,6 +24,16 @@ namespace Aura
 			this.Users = new List<User> ();
 		}
 
+		public User GetUserById(string id)
+		{
+			List<User> users = Users.Where (t => t.ID == id).ToList();
+			User u = null;
+			if (users.Count != 0)
+				u = users.First ();
+
+			return u;
+		}
+
 		public async Task<User> GetUserByIdAsync(string id)
 		{
 			await SyncAsync ();
@@ -38,7 +48,38 @@ namespace Aura
 
 		public User GetUserByEmail(string email)
 		{
-			return (User)Users.Where (t => t.Email == email).First ();
+			List<User> users = Users.Where (t => t.Email.ToLower() == email.ToLower()).ToList();
+			User u = null;
+			if (users.Count != 0)
+				u = users.First ();
+
+			return u;
+		}
+
+		public async Task<ObservableCollection<User>> GetUserCache ()
+		{
+			Users = (await userTable.ToListAsync ());
+
+			var shorted = Users.OrderBy (d => d.Name);
+			return new ObservableCollection<User> (shorted);
+
+		}
+
+		public async Task<ObservableCollection<User>> GetUserAsync ()
+		{
+			try {
+				await SyncAsync ();
+
+				Users = (await userTable.ToListAsync ());
+
+				var shorted = Users.OrderBy (d => d.Name);
+				return new ObservableCollection<User> (shorted);
+			} catch (MobileServiceInvalidOperationException msioe) {
+				Debug.WriteLine (@"GetPupilsByUserAsync INVALID {0}", msioe.Message);
+			} catch (Exception e) {
+				Debug.WriteLine (@"GetPupilsByUserAsync ERROR {0}", e.Message);
+			}
+			return null;
 		}
 
 		public async Task<User> GetUserByEmailAsync(User item)
@@ -52,10 +93,10 @@ namespace Aura
 				return temp.First ();
 			} else {
 				await SaveUserAsync (item);
-				return  Users.Where (t => t.Email == item.Email).First ();
+				return  Users.Where (t => t.Email.ToLower() == item.Email.ToLower()).First ();
 			}
 		}
-			
+
 
 		public async Task SaveUserAsync (User item)
 		{
@@ -82,7 +123,7 @@ namespace Aura
 						if(t.Status == TaskStatus.Faulted)
 						{
 							Debug.WriteLine ((t.Exception.InnerExceptions[0]).Message);
-							this.userTable.PurgeAsync();
+							//							this.userTable.PurgeAsync();
 						}
 					}
 				);

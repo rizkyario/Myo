@@ -10,7 +10,7 @@ using System.Net;
 using Aura.Helpers;
 using Myo;
 
-[assembly: ExportRenderer (typeof (SettingsPage), typeof (SettingsPageRenderer))]
+[assembly: ExportRenderer (typeof (Page), typeof (SettingsPageRenderer))]
 namespace Aura.iOS
 {
 	public class SettingsPageRenderer: PageRenderer

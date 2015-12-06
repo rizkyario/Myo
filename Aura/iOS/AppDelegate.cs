@@ -13,7 +13,6 @@ using Xamarin;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 using Xamarin.Forms.Platform.iOS;
-using XLabs.Forms.Charting.Controls;
 
 namespace Aura.iOS
 {
@@ -22,18 +21,23 @@ namespace Aura.iOS
 	{
 		MobileServiceClient Client;
 		IMobileServiceSyncTable<User> userTable;
-		public static PageRenderer MainMenu;
+		IMobileServiceSyncTable<Sign> signTable;
+		IMobileServiceSyncTable<Gesture> gestureTable;
 
+
+		public static PageRenderer MainMenu;
 
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
-			OxyPlot.Xamarin.Forms.Platform.iOS.Forms.Init();
-
+			OxyPlot.Xamarin.Forms.Platform.iOS.Forms.Init ();
 			global::Xamarin.Forms.Forms.Init ();
 			InitiateAzureMobile ();
 			InitiateXlab ();
 			InitializeInsight ();
 			LoadApplication (App.Instance);
+
+			var dummy = typeof(OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer);
+
 			return base.FinishedLaunching (app, options);
 		}
 
@@ -44,10 +48,8 @@ namespace Aura.iOS
 			container.Register<IDisplay> (t => t.Resolve<IDevice> ().Display);
 			container.Register<INetwork>(t=> t.Resolve<IDevice>().Network);
 
-			//Load Chart Renderer
-			ChartRenderer chartRenderer = new ChartRenderer (); 
-
 			Resolver.SetResolver (container.GetResolver ());
+
 		}
 
 		public void InitializeInsight()
@@ -75,13 +77,16 @@ namespace Aura.iOS
 				App.applicationKey);
 
 //			InitUserTable().Wait();
-
+//			InitGestureTable().Wait();
 
 			InitializeStoreAsync().Wait();
 			userTable = Client.GetSyncTable<User>();
-
+			signTable = Client.GetSyncTable<Sign>();
+			gestureTable = Client.GetSyncTable<Gesture>();
 
 			App.UserServer = new UserService(Client,userTable);
+			App.SignServer = new SignService(Client, signTable);
+			App.GestureServer = new GestureService(Client, gestureTable);
 
 		}
 
@@ -91,7 +96,8 @@ namespace Aura.iOS
 			var store = new MobileServiceSQLiteStore (path);
 
 			store.DefineTable<User> ();
-
+			store.DefineTable<Sign> ();
+			store.DefineTable<Gesture> ();
 
 			await Client.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
 		}
@@ -110,6 +116,24 @@ namespace Aura.iOS
 				Token =""
 			};
 			await Client.GetTable<User>().InsertAsync(u);
+		}
+
+		public async Task InitGestureTable()
+		{
+			Gesture u = new Gesture {
+				User="",
+				Sign="",
+				Word="",
+				Dialect="",
+				Accelaration="",
+				EMG="",
+				Gyro="",
+				Orientation="",
+				OrientationE="",
+				Pose="",
+
+			};
+			await Client.GetTable<Gesture>().InsertAsync(u);
 		}
 	}
 }
