@@ -14,7 +14,8 @@
 			<Button Text=""
 	               Clicked="OnXBtnClicked"
 	               HorizontalOptions="Start"
-	               Style="{StaticResource TopBarButtonStyle}"/>			
+	               Style="{StaticResource TopBarButtonStyle}"
+				BackgroundColor="Transparent"/>			
 	     </Grid>
 		<WebView Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Source="https://github.com/rizkyario/Myo/blob/master/README.md"/>
 	</Grid>      

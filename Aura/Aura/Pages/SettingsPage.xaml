@@ -15,7 +15,8 @@
 		<Button Text=""
 		       Clicked="OnXBtnClicked"
 		       HorizontalOptions="Start"
-		       Style="{StaticResource TopBarButtonStyle}"/>			
+		       Style="{StaticResource TopBarButtonStyle}"
+				BackgroundColor="Transparent"/>			
 		</Grid>
 		<TableView Grid.Row="1">
 			<TableView.Root>
@@ -27,7 +28,7 @@
 		                <ViewCell.View>
 		                    <Grid Padding="15,0,15,0">
 		                        <Label Text ="Myo Sensors" HorizontalOptions="Start" VerticalOptions="Center"/>
-		                        <Button HorizontalOptions="End" Text="Connect" TextColor="Blue" Clicked="OnConnectButtonClicked" VerticalOptions="Center"/>
+		                        <Button HorizontalOptions="End" Text="Connect" TextColor="Blue" Clicked="OnConnectButtonClicked" VerticalOptions="Center" BackgroundColor="Transparent"/>
 		                    </Grid>      
 		                </ViewCell.View>
 		    		</ViewCell>
@@ -36,7 +37,7 @@
 					<ViewCell>
 		                <ViewCell.View>
 		                    <Grid Padding="15,0,15,0">
-		                        <Button HorizontalOptions="Center" Text="Logout" TextColor="Red" Clicked="OnLogoutBtnClicked" Font="Blod" VerticalOptions="Center"/>
+		                        <Button HorizontalOptions="Center" Text="Logout" TextColor="Red" Clicked="OnLogoutBtnClicked" Font="Blod" VerticalOptions="Center" BackgroundColor="Transparent"/>
 		                    </Grid>      
 		                </ViewCell.View>
 		    		</ViewCell>

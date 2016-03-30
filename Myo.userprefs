@@ -1,8 +1,20 @@
-﻿<Properties StartupItem="Aura/iOS/Aura.iOS.csproj" GitUserInfo="UsingMD">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Aura/Aura/Pages/TrainingPage.xaml.cs">
+﻿<Properties StartupItem="Aura/Droid/Aura.Droid.csproj" GitUserInfo="UsingMD" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Aura/Droid/MainActivity.cs">
     <Files>
-      <File FileName="Aura/Aura/Pages/TrainingPage.xaml.cs" Line="12" Column="30" />
+      <File FileName="Aura/Droid/MainActivity.cs" Line="4" Column="7" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Myo" expanded="True">
+            <Node name="Aura.Droid" expanded="True">
+              <Node name="ComponentReferenceFolder" expanded="True" selected="True" />
+              <Node name="Packages" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -22,6 +34,11 @@
     <Watch file="Aura/Aura/ViewModel/GesturesViewModel.cs" line="275" offsetX="730" offsetY="4201" expression="inputPoseList[3]" liveUpdate="False" />
     <Watch file="Aura/Aura/ViewModel/GesturesViewModel.cs" line="275" offsetX="729" offsetY="4081" expression="inputPoseList[0]" liveUpdate="False" />
     <Watch file="Aura/Aura/Pages/TrainingPage.xaml.cs" line="52" offsetX="1288" offsetY="750" expression="App.AuraVM.GesturesVM.DeepLearning" liveUpdate="False" />
+    <Watch file="Aura.Droid/Renderer/ButtonCustomRenderer.cs" line="23" offsetX="431" offsetY="330" expression="buttonBackground" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.ItemProperties.Aura.Droid PreferredExecutionTarget="Android.Nexus 5 Lollipop" />
   <MonoDevelop.Ide.ItemProperties.Aura.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.562B7563-AFEC-41BB-BD09-D0C93B7CDF33" />
+  <DisabledProjects>
+    <String>Aura.Droid/Aura.Droid.csproj</String>
+  </DisabledProjects>
 </Properties>

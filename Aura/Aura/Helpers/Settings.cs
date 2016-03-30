@@ -68,6 +68,12 @@ namespace Aura.Helpers
 			}
 		}
 
+		public static User GetDummyUser()
+		{
+			string dummyUser = "{\"id\":\"9322ecad-7781-40a1-b589-77117cd31d0b\",\"name\":\"Isara\",\"email\":\"isaratv@gmail.com\",\"facebook\":\"1468780186\",\"image\":\"http://www.isara.tv/wp-content/uploads/2015/04/logo-100x100.png\",\"language\":\"English\",\"token\":\"CAAUsLlDr2W4BAATB4ZCS6ZCYSicWezq41ZAl0zgZANqdSMCSMpbATcnwe8OaZCY7AEzu5iPg2LIlVMijMk6CCS0J4BO4lVOZBSLhgBvUHLS3gfaFitpmfY4lMeGHGJ91NpN0RVtF6lznjpjxvoqKU5OMRZBCeVjlSVJD0sqROYDFCAHJZCZBY12R0gnQeQRVzNxlqTwhcMkiVMKyZBxZAdT0JvRXZAZAgD4Y7r8EZD\",\"location\":\"Bandung\",\"followers\":null,\"following\":null}";
+			return JsonConvert.DeserializeObject<User>(dummyUser);
+		}
+
 	}
 
 

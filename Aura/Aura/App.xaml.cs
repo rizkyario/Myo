@@ -101,6 +101,19 @@ namespace Aura
 			}
 		}
 
+		public bool DoBack
+		{
+			get
+			{
+				NavigationPage mainPage = MainPage as NavigationPage;
+				if (mainPage != null)
+				{
+					return mainPage.Navigation.NavigationStack.Count > 1;
+				}
+				return true;
+			}
+		}
+
 		protected override void OnStart ()
 		{
 			// Handle when your app starts

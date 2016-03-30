@@ -16,20 +16,20 @@
 		        <RowDefinition Height="60" />
 			</Grid.RowDefinitions>
 	        	<StackLayout Padding="15,15,0,0" Grid.Column="0">
-	        		<Button Text="" Style="{StaticResource MasterIconStyle}" Clicked="OnMenuBtnClicked" CommandParameter="Dashboard"/>
-	        		<Button Text="" Style="{StaticResource MasterIconStyle}"  Clicked="OnMenuBtnClicked" CommandParameter="Train Gestures"/>
+	        		<Button Text="" Style="{StaticResource MasterIconStyle}" Clicked="OnMenuBtnClicked" CommandParameter="Dashboard" BackgroundColor="Transparent"/>
+	        		<Button Text="" Style="{StaticResource MasterIconStyle}"  Clicked="OnMenuBtnClicked" CommandParameter="Train Gestures" BackgroundColor="Transparent"/>
 	        	</StackLayout>        	
 	        	<StackLayout Padding="15,15,0,0" Grid.Column="1">
-	        		<Button Text="Aura" Style="{StaticResource MasterLabelStyle}" Clicked="OnMenuBtnClicked" CommandParameter="Dashboard"/>
-	        		<Button Text="Train Gestures" Style="{StaticResource MasterLabelStyle}"  Clicked="OnMenuBtnClicked" CommandParameter="Train Gestures"/>
+	        		<Button Text="Aura" Style="{StaticResource MasterLabelStyle}" Clicked="OnMenuBtnClicked" CommandParameter="Dashboard" BackgroundColor="Transparent"/>
+	        		<Button Text="Train Gestures" Style="{StaticResource MasterLabelStyle}"  Clicked="OnMenuBtnClicked" CommandParameter="Train Gestures" BackgroundColor="Transparent"/>
 	        	</StackLayout>
 	        	<Grid RowSpacing="0" Padding="-1,0,-1,-1" ColumnSpacing="0" Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 	        	<Grid.ColumnDefinitions>
 			        <ColumnDefinition Width="0.5*" />
 			        <ColumnDefinition Width="0.5*" />
 				</Grid.ColumnDefinitions>
-	        		<Button BorderWidth="0.5" BorderRadius="0" Text="" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Style="{StaticResource MasterIconStyle}" Clicked="OnSettingsBtnClicked" CommandParameter="Fields"/>
-	        		<Button BorderWidth="0.5" BorderRadius="0" Text="" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Style="{StaticResource MasterIconStyle}" Clicked="OnHelpBtnClicked" CommandParameter="Fields"/>
+	        		<Button BorderWidth="0.5" BorderRadius="0" Text="" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Style="{StaticResource MasterIconStyle}" Clicked="OnSettingsBtnClicked" CommandParameter="Fields" BackgroundColor="Transparent"/>
+	        		<Button BorderWidth="0.5" BorderRadius="0" Text="" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Style="{StaticResource MasterIconStyle}" Clicked="OnHelpBtnClicked" CommandParameter="Fields" BackgroundColor="Transparent"/>
 	        	</Grid>
 			</Grid> 
 			       

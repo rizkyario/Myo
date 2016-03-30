@@ -20,7 +20,8 @@
 			<Button Text=""
 	               Clicked="OnBurgerMenuBtnClicked"
 	               HorizontalOptions="Start"
-	               Style="{StaticResource TopBarButtonStyle}"/>
+	               Style="{StaticResource TopBarButtonStyle}"
+				BackgroundColor="Transparent"/>
 		    </Grid>
 		<ListView x:Name="list" 
 			Grid.Row="1"

@@ -29,7 +29,7 @@
 			<Grid Grid.Row="0" BackgroundColor="{StaticResource DarkBlue}">	
 	    		<Grid HeightRequest="180" WidthRequest="310" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
 		    	<Image  HeightRequest="180" WidthRequest="310" Source="{Binding SelectedSign.Image}" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center"/>
-				<Button Text="" Font="{StaticResource CameraIconFont}" BackgroundColor="Transparent" TextColor="{StaticResource LightGray}" Opacity="0.7" Clicked="OnPlayClicked" CommandParameter="{Binding SelectedSign}" IsVisible="{Binding SelectedSign.IsNotActive}" HorizontalOptions="Center" VerticalOptions="Center"/>
+				<Button Text="" Font="{StaticResource CameraIconFont}" BackgroundColor="Transparent" TextColor="{StaticResource LightGray}" Opacity="0.7" Clicked="OnPlayClicked" CommandParameter="{Binding SelectedSign}" IsVisible="{Binding SelectedSign.IsNotActive}" HorizontalOptions="Center" VerticalOptions="Center" />
 		    	<local:VideoCustomView HeightRequest="180" WidthRequest="310" GIFSource="{Binding SelectedSign.Image}"  IsVisible="{Binding SelectedSign.IsActive}" FileSource="{Binding SelectedSign.Video}" HorizontalOptions="Center" VerticalOptions="Center"/>
 	    	</Grid>
 
@@ -43,8 +43,8 @@
 					<Entry x:Name="iterationLabel" Text="5000" WidthRequest="100"/>
 					<Entry x:Name="layerLabel" Text="100" WidthRequest="100"/>
 				</StackLayout>	
-				<Button Text="Train Gesture" Clicked="OnTrainButtonClicked" IsEnabled="{Binding GesturesVM.IsNotBusy}"/>
-				<Button Text="Recognize Gesture" Clicked="OnDetectButtonClicked" IsEnabled="{Binding GesturesVM.IsNotBusy}"/>
+				<Button Text="Train Gesture" Clicked="OnTrainButtonClicked" IsEnabled="{Binding GesturesVM.IsNotBusy}" BackgroundColor="Transparent"/>
+				<Button Text="Recognize Gesture" Clicked="OnDetectButtonClicked" IsEnabled="{Binding GesturesVM.IsNotBusy}" BackgroundColor="Transparent"/>
 			    <Label x:Name="errorLabel" TextColor="Black" HorizontalOptions="Center"/>	
 			    <Label x:Name="resultLabel" TextColor="Black" HorizontalOptions="Center"/>		    
 			</StackLayout>
@@ -65,7 +65,7 @@
 			    		<Grid Padding="0,-25,0,0" Grid.Column="1" Grid.ColumnSpan="3" >
 							<Label Text="" TextColor="#f8f8f8" HorizontalOptions="Center"  Font="{StaticResource Circle}"/>
 							<Label Text="" TextColor="#ef4e3a" HorizontalOptions="Center" Font="{StaticResource innerCircle}"/>
-							<Button Text="REC" TextColor="White" IsVisible="{Binding IsNotRecording}" Clicked="OnRecordBtnClicked" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" BackgroundColor="Transparent"/>
+							<Button Text="REC" TextColor="White" IsVisible="{Binding IsNotRecording}" Clicked="OnRecordBtnClicked" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" BackgroundColor="Transparent" />
 							<Button Text="" TextColor="White" IsVisible="{Binding IsRecording}" Clicked="OnStopBtnClicked" HorizontalOptions="Center" VerticalOptions="Center" Font="{StaticResource FontAwesomeBar}" BackgroundColor="Transparent"/>
 				        </Grid>
 
@@ -78,7 +78,7 @@
 				                TextColor="#0079ff"
 				                Font="{StaticResource TabFont}"/>
 				        <Button Grid.Column="1" Clicked="OnButtonClicked"  CommandParameter="GraphBtn" VerticalOptions="Start" 
-				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#444444"/>
+				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#444444" BackgroundColor="Transparent"/>
 			            <Label 	Text = "Graph"
 			            	   	Grid.Column="1"
 			                   	HorizontalOptions="Center"
@@ -86,7 +86,7 @@
 			                   	TextColor="#444444"
 			                   	Font="{StaticResource TabFont}"/>
 				        <Button Grid.Column="3" Clicked="OnButtonClicked"  CommandParameter="GesturesBtn" IsEnabled="{Binding GesturesVM.IsNotBusy}" VerticalOptions="Start" 
-				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#444444" BackgroundColor="Transparent"/>
+				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#444444" BackgroundColor="Transparent" />
 			           	<Label 	Text = "Gestures"
 			            		Grid.Column="3"
 			                   	HorizontalOptions="Center"
@@ -258,7 +258,7 @@
 				                TextColor="#444444"
 				                Font="{StaticResource TabFont}"/>
 				        <Button Grid.Column="1" Clicked="OnButtonClicked"  CommandParameter="GraphBtn" VerticalOptions="Start" 
-				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#444444"/>
+				        		Text="" Font="{StaticResource FontAwesomeBar}" TextColor="#444444" BackgroundColor="Transparent"/>
 			            <Label 	Text = "Graph"
 			            	   	Grid.Column="1"
 			                   	HorizontalOptions="Center"
@@ -312,7 +312,7 @@
 		                <ViewCell.View>
 		                    <Grid Padding="15,0,15,0">
 		                        <Label Text ="Myo Sensors" HorizontalOptions="Start" VerticalOptions="Center"/>
-		                        <Button HorizontalOptions="End" Text="Connect" TextColor="Blue" Clicked="OnConnectButtonClicked" VerticalOptions="Center"/>
+		                        <Button HorizontalOptions="End" Text="Connect" TextColor="Blue" Clicked="OnConnectButtonClicked" VerticalOptions="Center" BackgroundColor="Transparent"/>
 		                    </Grid>      
 		                </ViewCell.View>
 		    		</ViewCell>

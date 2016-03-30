@@ -29,7 +29,7 @@ namespace Aura
 			InitializeComponent ();
 			InitializeVM ();
 
-			DependencyService.Get<IMyoSensor> ().Initialize();
+			//DependencyService.Get<IMyoSensor> ().Initialize();
 			App.AuraVM.InitializeEMGModel ();
 			App.AuraVM.InitializeAccelarationModel ();
 

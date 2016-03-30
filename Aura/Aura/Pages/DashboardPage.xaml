@@ -17,7 +17,8 @@
 			<Button Text=""
 	               Clicked="OnBurgerMenuBtnClicked"
 	               HorizontalOptions="Start"
-	               Style="{StaticResource TopBarButtonStyle}"/>
+	               Style="{StaticResource TopBarButtonStyle}"
+				BackgroundColor="Transparent"/>
 		</Grid>
 		<ScrollView Grid.Row="1" x:Name="scrollView">
 
@@ -27,7 +28,7 @@
                 <Label Text ="{Binding Status}" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Label Text ="{Binding Pose}" HorizontalOptions="Center" VerticalOptions="Center" Font="Blod" XAlign="Center"/>
                 <BoxView HeightRequest="100"/>
-<!--                <Button Text ="Start" HorizontalOptions="Center" Font="Blod" VerticalOptions="End" Clicked="OnStartButtonClicked"/>-->
+<!--                <Button Text ="Start" HorizontalOptions="Center" Font="Blod" VerticalOptions="End" Clicked="OnStartButtonClicked" BackgroundColor="Transparent"/>-->
                 <BoxView HeightRequest="100"/>
 
             </StackLayout>      

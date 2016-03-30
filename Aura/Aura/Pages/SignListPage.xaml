@@ -21,7 +21,8 @@
 			<Button Text=""
 		           Clicked="OnXBtnClicked"
 		           HorizontalOptions="Start"
-		           Style="{StaticResource TopBarButtonStyle}"/>
+		           Style="{StaticResource TopBarButtonStyle}"
+				BackgroundColor="Transparent"/>
 		</Grid>
 		<ListView x:Name="list" 
 			Grid.Row="1"
@@ -66,7 +67,7 @@
 						    	<local:VideoCustomView HeightRequest="310" WidthRequest="310" IsVisible="{Binding IsActive}" GIFSource="{Binding Image}" FileSource="{Binding  Video}" HorizontalOptions="Center" VerticalOptions="Center"/>
 					    	</Grid>
 					    	<Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="{StaticResource DarkBlue}">
-			      				<Button Text=""  HorizontalOptions="End" VerticalOptions="Start" Style="{StaticResource ListViewButtonStyle}"/>
+			      				<Button Text=""  HorizontalOptions="End" VerticalOptions="Start" Style="{StaticResource ListViewButtonStyle}" BackgroundColor="Transparent"/>
 		      				</Grid>
 			      		</Grid>
 			      	</ViewCell>

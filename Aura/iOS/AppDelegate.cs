@@ -29,7 +29,7 @@ namespace Aura.iOS
 
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
-			OxyPlot.Xamarin.Forms.Platform.iOS.Forms.Init ();
+			OxyPlot.Xamarin.Forms.Platform.iOS.Forms.Init();
 			global::Xamarin.Forms.Forms.Init ();
 			InitiateAzureMobile ();
 			InitiateXlab ();

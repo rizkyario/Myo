@@ -217,6 +217,9 @@
     <Reference Include="OxyPlot.Xamarin.iOS">
       <HintPath>..\..\packages\OxyPlot.Xamarin.iOS.1.0.0-unstable1983\lib\Xamarin.iOS10\OxyPlot.Xamarin.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="XLabs.Serialization.JsonNET">
+      <HintPath>..\..\packages\XLabs.Serialization.JSON.2.0.5782\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Serialization.JsonNET.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default.png" />
@@ -248,7 +251,6 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderer\LoginPageRenderer.cs" />
     <Compile Include="Localize.cs" />
-    <Compile Include="Renderer\MyoSensoriOS.cs" />
     <Compile Include="Renderer\ConnectPageRenderer.cs" />
     <Compile Include="Renderer\TextToSpeechServiceiOS.cs" />
     <Compile Include="Renderer\VideoViewRenderer.cs" />
@@ -258,6 +260,7 @@
     <Compile Include="Renderer\GIFViewRenderer.cs" />
     <Compile Include="Renderer\SaveAndLoad.cs" />
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="Renderer\MyoSensoriOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="ITunesArtwork" />
@@ -286,9 +289,9 @@
       <Project>{E6332B5F-4620-441C-816B-95144CD50477}</Project>
       <Name>Aura</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Myo\Myo.csproj">
+    <ProjectReference Include="..\..\Myo\MyoiOS.csproj">
       <Project>{B3AD90AA-09A7-431B-AA74-6EDD5658BED8}</Project>
-      <Name>Myo</Name>
+      <Name>MyoiOS</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

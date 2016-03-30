@@ -13,6 +13,15 @@ namespace Aura
 			InitializeComponent ();
 			NavigationPage.SetHasNavigationBar(this, false);
 		}
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+
+			//#if ENABLE_TEST_CLOUD
+			Settings.CurrentUser = Settings.GetDummyUser ();
+			App.Instance.FinishLogin.Invoke ();
+			//#endif
+		}
 		public void OnFBLoginBtnClicked (object o, EventArgs e)
 		{
 			LoginPage a = new LoginPage ("Facebook");
