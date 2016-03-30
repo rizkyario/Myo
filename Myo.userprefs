@@ -1,20 +1,13 @@
-﻿<Properties StartupItem="Aura/iOS/Aura.iOS.csproj" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+﻿<Properties StartupItem="Aura/iOS/Aura.iOS.csproj" GitUserInfo="UsingMD">
   <MonoDevelop.Ide.Workbench ActiveDocument="Aura/Aura/Pages/TrainingPage.xaml.cs">
     <Files>
-      <File FileName="Aura/Aura/ViewModel/GesturesViewModel.cs" Line="224" Column="28" />
-      <File FileName="Aura/Aura/Pages/WordListPage.xaml" Line="1" Column="1" />
-      <File FileName="Aura/iOS/AppDelegate.cs" Line="1" Column="1" />
-      <File FileName="Aura/iOS/Localize.cs" Line="7" Column="31" />
-      <File FileName="Aura/Aura/Pages/TrainingPage.xaml.cs" Line="241" Column="89" />
-      <File FileName="Aura/Aura/Helpers/ISaveAndLoad.cs" Line="10" Column="9" />
-      <File FileName="Aura/iOS/Renderer/SaveAndLoad.cs" Line="19" Column="1" />
+      <File FileName="Aura/Aura/Pages/TrainingPage.xaml.cs" Line="12" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/rizkyario/Project/Myo/Aura/iOS/Renderer/OxyPlotViewRenderer.cs" line="12" column="1" />
-    </BreakpointStore>
+    <Breakpoint file="/Users/rizkyario/Project/Myo/Aura/iOS/Renderer/OxyPlotViewRenderer.cs" line="12" column="1" />
+    <Breakpoint file="/Users/rizkyario/Project/Aura/Aura/Aura/Services/GestureService.cs" line="72" column="1" />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../MyoSampleApp/MainPageViewController.cs" line="176" offsetX="285" offsetY="2625" expression="pose.Type" liveUpdate="False" />
@@ -23,5 +16,12 @@
     <Watch file="Aura/iOS/Renderer/MyoSensoriOS.cs" line="185" offsetX="1168" offsetY="2839" expression="accelerationVector.Z" liveUpdate="False" />
     <Watch file="Aura/Aura/Models/MyoData.cs" line="98" offsetX="620" offsetY="1462" expression="value[0][0]" liveUpdate="False" />
     <Watch file="Aura/iOS/Renderer/GIFViewRenderer.cs" line="36" offsetX="1198" offsetY="630" expression="video.GIFSource" liveUpdate="False" />
+    <Watch file="Aura/Aura/ViewModel/GesturesViewModel.cs" line="275" offsetX="725" offsetY="4110" expression="inputPoseList" liveUpdate="False" />
+    <Watch file="Aura/Aura/ViewModel/GesturesViewModel.cs" line="275" offsetX="725" offsetY="4135" expression="inputPoseList[1]" liveUpdate="False" />
+    <Watch file="Aura/Aura/ViewModel/GesturesViewModel.cs" line="275" offsetX="730" offsetY="4171" expression="inputPoseList[2]" liveUpdate="False" />
+    <Watch file="Aura/Aura/ViewModel/GesturesViewModel.cs" line="275" offsetX="730" offsetY="4201" expression="inputPoseList[3]" liveUpdate="False" />
+    <Watch file="Aura/Aura/ViewModel/GesturesViewModel.cs" line="275" offsetX="729" offsetY="4081" expression="inputPoseList[0]" liveUpdate="False" />
+    <Watch file="Aura/Aura/Pages/TrainingPage.xaml.cs" line="52" offsetX="1288" offsetY="750" expression="App.AuraVM.GesturesVM.DeepLearning" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.ItemProperties.Aura.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.562B7563-AFEC-41BB-BD09-D0C93B7CDF33" />
 </Properties>

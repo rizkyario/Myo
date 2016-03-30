@@ -268,7 +268,7 @@ namespace Aura
 
 		public async Task<ObservableCollection<Grouping<string, Sign>>> InitSignsGroupCache ()
 		{
-			Signs =  await signTable.ToListAsync();
+			Signs =  await signTable.Where(t => t.Word.ToLower().Contains("Saya") || t.Word.ToLower().Contains("Dia") || t.Word.ToLower().Contains("Kamu")).ToListAsync();
 
 			var merged = from sign in Signs
 				group sign by sign.Word into signGroup
@@ -296,7 +296,7 @@ namespace Aura
 			{
 				await this.client.SyncContext.PushAsync();
 
-			    Signs =  await signTable.ToListAsync();
+				Signs = await signTable.Where(t => t.Word.ToLower().Contains("Saya") || t.Word.ToLower().Contains("Dia") || t.Word.ToLower().Contains("Kamu")).ToListAsync();
 
 				var query = signTable.Where (t => t.Location == "Jakarta").IncludeTotalCount();
 				await this.signTable.PullAsync(null, query);

@@ -11,7 +11,7 @@ using System.Linq;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Accord.Neuro.ActivationFunctions;
-using AForge.Neuro.Learning;
+using Accord.Neuro.Learning;
 using Aura.Helpers;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -20,6 +20,8 @@ namespace Aura
 {
 	public partial class TrainingPage : TabbedPageCustom
 	{
+		DeepBeliefNetwork deepLearning;
+
 		public TrainingPage (Sign sign)
 		{
 			NavigationPage.SetHasNavigationBar (this, false);

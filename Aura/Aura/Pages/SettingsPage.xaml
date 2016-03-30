@@ -10,7 +10,7 @@
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>	
-		<Grid BackgroundColor="{StaticResource DarkGreen}" Grid.Row="0" Style="{StaticResource TopBarStyle}">
+		<Grid BackgroundColor="{StaticResource DarkBlue}" Grid.Row="0" Style="{StaticResource TopBarStyle}">
 		<Label Text="Settings" Style="{StaticResource TopBarLabelStyle}"/>
 		<Button Text=""
 		       Clicked="OnXBtnClicked"

@@ -5,7 +5,7 @@
 	Title="LoginPage"
 	>
 	<ContentPage.Content>
-	    <Grid BackgroundColor="{StaticResource DarkGreen}">
+	    <Grid BackgroundColor="{StaticResource DarkBlue}">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*" />
 		</Grid.ColumnDefinitions>

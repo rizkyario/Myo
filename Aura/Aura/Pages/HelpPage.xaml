@@ -9,13 +9,14 @@
 	        <RowDefinition Height="Auto" />
 	        <RowDefinition Height="*" />
 		</Grid.RowDefinitions>	
-		<Grid BackgroundColor="{StaticResource DarkGreen}" Grid.Row="0" Style="{StaticResource TopBarStyle}">
+		<Grid BackgroundColor="{StaticResource DarkBlue}" Grid.Row="0" Style="{StaticResource TopBarStyle}">
 	        <Label Text="Help" Style="{StaticResource TopBarLabelStyle}"/>
 			<Button Text=""
 	               Clicked="OnXBtnClicked"
 	               HorizontalOptions="Start"
 	               Style="{StaticResource TopBarButtonStyle}"/>			
 	     </Grid>
+		<WebView Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Source="https://github.com/rizkyario/Myo/blob/master/README.md"/>
 	</Grid>      
 </ContentPage>
 	
